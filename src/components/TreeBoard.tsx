@@ -10,11 +10,11 @@ type TreeBoardProps = {
 
 type ConnectorLine = {
   id: string;
-  x1: number;
-  y1: number;
-  x2: number;
-  y2: number;
+  path: string;
+  labelX: number;
+  labelY: number;
   label: string;
+  arrow: boolean;
   tone: 'family' | 'romance' | 'legal' | 'custom';
 };
 
@@ -31,10 +31,40 @@ function formatRelationTone(tone?: Relation['tone']): ConnectorLine['tone'] {
   }
 }
 
+function relationShouldUseArrow(label: string) {
+  return label.trim().toLowerCase().endsWith(' of');
+}
+
+function offsetPointTowards(
+  fromX: number,
+  fromY: number,
+  toX: number,
+  toY: number,
+  offset: number,
+) {
+  const deltaX = toX - fromX;
+  const deltaY = toY - fromY;
+  const distance = Math.max(Math.hypot(deltaX, deltaY), 1);
+
+  return {
+    x: fromX + (deltaX / distance) * offset,
+    y: fromY + (deltaY / distance) * offset,
+  };
+}
+
+function getAvatarBox(node: HTMLElement) {
+  const avatar = node.querySelector<HTMLElement>('.person-avatar');
+  return avatar?.getBoundingClientRect() ?? node.getBoundingClientRect();
+}
+
 export function TreeBoard({ people, relations, peopleById }: TreeBoardProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const cardRefs = useRef(new Map<string, HTMLElement>());
   const [connectorLines, setConnectorLines] = useState<ConnectorLine[]>([]);
+  const generationById = useMemo(
+    () => new Map(people.map((person) => [person.id, person.generation])),
+    [people],
+  );
 
   const generations = useMemo(() => {
     const grouped = new Map<number, Person[]>();
@@ -60,6 +90,12 @@ export function TreeBoard({ people, relations, peopleById }: TreeBoardProps) {
       }
 
       const containerBox = container.getBoundingClientRect();
+      const pairKey = (relation: Relation) => {
+        const [leftId, rightId] = [relation.from, relation.to].sort();
+        return `${leftId}__${rightId}`;
+      };
+
+      const pairCounts = new Map<string, number>();
       const nextLines = relations.flatMap((relation, index) => {
         const fromCard = cardRefs.current.get(relation.from);
         const toCard = cardRefs.current.get(relation.to);
@@ -68,17 +104,87 @@ export function TreeBoard({ people, relations, peopleById }: TreeBoardProps) {
           return [];
         }
 
-        const fromBox = fromCard.getBoundingClientRect();
-        const toBox = toCard.getBoundingClientRect();
+        const fromBox = getAvatarBox(fromCard);
+        const toBox = getAvatarBox(toCard);
+        const fromCenterX = fromBox.left - containerBox.left + fromBox.width / 2;
+        const fromCenterY = fromBox.top - containerBox.top + fromBox.height / 2;
+        const toCenterX = toBox.left - containerBox.left + toBox.width / 2;
+        const toCenterY = toBox.top - containerBox.top + toBox.height / 2;
+        const key = pairKey(relation);
+        const pairIndex = pairCounts.get(key) ?? 0;
+        pairCounts.set(key, pairIndex + 1);
+        const pairTotal = relations.filter((candidate) => pairKey(candidate) === key).length;
+
+        const fromRadius = Math.max(fromBox.width, fromBox.height) / 2;
+        const toRadius = Math.max(toBox.width, toBox.height) / 2;
+        const connectorPadding = 12;
+        const start = offsetPointTowards(
+          fromCenterX,
+          fromCenterY,
+          toCenterX,
+          toCenterY,
+          fromRadius + connectorPadding,
+        );
+        const end = offsetPointTowards(
+          toCenterX,
+          toCenterY,
+          fromCenterX,
+          fromCenterY,
+          toRadius + connectorPadding,
+        );
+
+        const sameGeneration = generationById.get(relation.from) === generationById.get(relation.to);
+
+        if (!sameGeneration) {
+          const midX = (start.x + end.x) / 2;
+          const midY = (start.y + end.y) / 2;
+
+          return [
+            {
+              id: `${relation.from}-${relation.to}-${index}`,
+              path: `M ${start.x} ${start.y} L ${end.x} ${end.y}`,
+              labelX: midX,
+              labelY: midY,
+              label: relation.label,
+              arrow: relationShouldUseArrow(relation.label),
+              tone: formatRelationTone(relation.tone),
+            },
+          ];
+        }
+
+        const sameGenerationPeople = [...cardRefs.current.entries()]
+          .filter(([personId]) => generationById.get(personId) === generationById.get(relation.from))
+          .map(([personId, node]) => ({ personId, box: getAvatarBox(node) }))
+          .filter(({ personId }) => personId !== relation.from && personId !== relation.to);
+
+        if (sameGenerationPeople.length === 0) {
+          const midX = (start.x + end.x) / 2;
+          const midY = (start.y + end.y) / 2;
+
+          return [
+            {
+              id: `${relation.from}-${relation.to}-${index}`,
+              path: `M ${start.x} ${start.y} L ${end.x} ${end.y}`,
+              labelX: midX,
+              labelY: midY,
+              label: relation.label,
+              arrow: relationShouldUseArrow(relation.label),
+              tone: formatRelationTone(relation.tone),
+            },
+          ];
+        }
+        const rowTopY = Math.min(...sameGenerationPeople.map(({ box }) => box.top)) - 44;
+        const centeredIndex = pairIndex - (pairTotal - 1) / 2;
+        const elbowY = rowTopY + centeredIndex * 18;
 
         return [
           {
             id: `${relation.from}-${relation.to}-${index}`,
-            x1: fromBox.left - containerBox.left + fromBox.width / 2,
-            y1: fromBox.top - containerBox.top + fromBox.height / 2,
-            x2: toBox.left - containerBox.left + toBox.width / 2,
-            y2: toBox.top - containerBox.top + toBox.height / 2,
+            path: `M ${start.x} ${start.y} L ${start.x} ${elbowY} L ${end.x} ${elbowY} L ${end.x} ${end.y}`,
+            labelX: (start.x + end.x) / 2,
+            labelY: elbowY,
             label: relation.label,
+            arrow: relationShouldUseArrow(relation.label),
             tone: formatRelationTone(relation.tone),
           },
         ];
@@ -123,10 +229,23 @@ export function TreeBoard({ people, relations, peopleById }: TreeBoardProps) {
   return (
     <section className="tree-board" ref={containerRef}>
       <svg className="connector-layer" aria-hidden="true">
+        <defs>
+          <marker
+            id="relation-arrow"
+            markerWidth="12"
+            markerHeight="12"
+            refX="10"
+            refY="6"
+            orient="auto"
+            markerUnits="strokeWidth"
+          >
+            <path d="M 0 0 L 12 6 L 0 12 z" fill="rgba(244, 240, 234, 0.88)" />
+          </marker>
+        </defs>
         {connectorLines.map((line) => (
           <g key={line.id} className={`connector connector-${line.tone}`}>
-            <line x1={line.x1} y1={line.y1} x2={line.x2} y2={line.y2} />
-            <text x={(line.x1 + line.x2) / 2} y={(line.y1 + line.y2) / 2 - 8}>
+            <path d={line.path} markerEnd={line.arrow ? 'url(#relation-arrow)' : undefined} />
+            <text x={line.labelX} y={line.labelY - 10}>
               {line.label}
             </text>
           </g>

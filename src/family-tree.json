@@ -108,25 +108,25 @@
     {
       "from": "amir",
       "to": "youssef",
-      "label": "parent",
+      "label": "parent of of",
       "tone": "family"
     },
     {
       "from": "leila",
       "to": "youssef",
-      "label": "parent",
+      "label": "parent of",
       "tone": "family"
     },
     {
       "from": "amir",
       "to": "nadia",
-      "label": "parent",
+      "label": "parent of",
       "tone": "family"
     },
     {
       "from": "leila",
       "to": "nadia",
-      "label": "parent",
+      "label": "parent of",
       "tone": "family"
     },
     {
@@ -138,19 +138,19 @@
     {
       "from": "youssef",
       "to": "salma",
-      "label": "parent",
+      "label": "parent of",
       "tone": "family"
     },
     {
       "from": "mika",
       "to": "salma",
-      "label": "guardian",
+      "label": "guardian of",
       "tone": "legal"
     },
     {
       "from": "nadia",
       "to": "adam",
-      "label": "parent",
+      "label": "parent of",
       "tone": "family"
     },
     {
