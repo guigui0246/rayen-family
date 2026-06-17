@@ -158,6 +158,12 @@
       "to": "adam",
       "label": "adoptive sibling",
       "tone": "custom"
+    },
+    {
+      "from": "salma",
+      "to": "adam",
+      "label": "lovers",
+      "tone": "romance"
     }
   ]
 }

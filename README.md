@@ -42,9 +42,10 @@ This repository is set up for Cloudflare Pages as a static Vite site.
 4. Use these build settings:
    - **Framework preset:** Vite
    - **Build command:** `npm run build`
-   - **Deploy command:** `npx wrangler deploy`
+   - **Deploy command:** `npx wrangler versions upload`
    - **Path:** `/`
-5. Deploy the project.
+5. Make sure `wrangler.jsonc` is present at the repo root so Wrangler uploads the `dist` folder as static assets.
+6. Deploy the project.
 
 ## Notes
 
