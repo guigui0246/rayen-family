@@ -65,7 +65,8 @@ select {
 }
 
 .page-shell {
-  width: min(1320px, calc(100vw - 28px));
+  width: max-content;
+  min-width: calc(100vw - 28px);
   margin: 0 auto;
   padding: 28px 0 56px;
 }
@@ -360,14 +361,16 @@ select {
 .tree-board {
   position: relative;
   padding: 22px 10px 6px;
+  overflow: visible;
 }
 
 .connector-layer {
   position: absolute;
-  inset: 0;
-  width: 100%;
+  inset: 0 auto 0 0;
+  width: max-content;
+  min-width: 100%;
   height: 100%;
-  overflow: visible;
+  overflow: hidden;
   pointer-events: none;
   z-index: -1;
 }
@@ -407,27 +410,42 @@ select {
 }
 
 .generation-stack {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 22px;
   position: relative;
   z-index: 0;
+  width: max-content;
+  min-width: 100%;
 }
 
 .generation-row {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 12px;
+  width: 100%;
+  min-width: 100%;
 }
 
 .generation-label {
   color: rgba(255, 255, 255, 0.45);
-  padding-left: 6px;
+  align-self: flex-start;
+  width: 100%;
+  text-align: left;
 }
 
 .generation-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px;
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  gap: 100px;
   align-items: start;
+}
+
+.generation-row .generation-grid {
+  align-self: center;
 }
 
 .person-card {
@@ -438,6 +456,7 @@ select {
   border-radius: 26px;
   outline: none;
   overflow: visible;
+  flex: 0 0 auto;
 }
 
 .person-card:hover,
@@ -726,7 +745,8 @@ select {
 
 @media (max-width: 720px) {
   .page-shell {
-    width: min(100vw - 20px, 100%);
+    width: max-content;
+    min-width: calc(100vw - 20px);
     padding-top: 12px;
   }
 
@@ -741,9 +761,5 @@ select {
 
   .person-popover {
     width: min(290px, 88vw);
-  }
-
-  .generation-grid {
-    grid-template-columns: 1fr;
   }
 }
