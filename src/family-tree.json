@@ -159,6 +159,7 @@
       "name": "Guigui0246",
       "aliases": [],
       "avatarImage": "/assets/guigui0246.webp",
+      "born": "2005",
       "generation": 1,
       "order": 0,
       "bio": "Creator of this family tree.",
@@ -247,6 +248,20 @@
       "order": 3,
       "socialLinks": {
         "discord": "https://discord.com/users/226050139226112000"
+      },
+      "warnings": ["Not an official member of the family."]
+    },
+    {
+      "id": "kirito",
+      "name": "Kirito Sensei",
+      "location": "Rayen's heart",
+      "born": "2005",
+      "aliases": [],
+      "avatarImage": "/assets/kirito.webp",
+      "generation": 3,
+      "order": 6,
+      "socialLinks": {
+        "discord": "https://discord.com/users/915851873376956456"
       },
       "warnings": ["Not an official member of the family."]
     }
@@ -373,6 +388,13 @@
       "label": "enslaves",
       "tone": "family",
       "reverseLabel": "enslaved by"
+    },
+    {
+      "from": "kirito",
+      "to": "rayen",
+      "label": "in love with",
+      "tone": "romance",
+      "reverseLabel": "asked out by"
     }
   ]
 }
