@@ -457,6 +457,7 @@ select {
   outline: none;
   overflow: visible;
   flex: 0 0 auto;
+  cursor: pointer;
 }
 
 .person-card:hover,

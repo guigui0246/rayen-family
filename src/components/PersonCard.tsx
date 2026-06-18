@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { Person, Relation } from '../family/types';
 
 type PersonCardProps = {
@@ -9,24 +9,61 @@ type PersonCardProps = {
 };
 
 export function PersonCard({ person, relatedRelations, otherPersonName, setCardRef }: PersonCardProps) {
-  const [isOpen, setIsOpen] = useState(false);
+  const cardRef = useRef<HTMLElement | null>(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isPinnedOpen, setIsPinnedOpen] = useState(false);
   const avatarLabel = person.avatarImage ? person.name : '?';
   const aliases = person.aliases ?? [];
   const warnings = person.warnings ?? [];
+
+  useEffect(() => {
+    const handlePointerDown = (event: PointerEvent) => {
+      const node = cardRef.current;
+      if (!node || !isPinnedOpen || node.contains(event.target as Node)) {
+        return;
+      }
+
+      setIsPinnedOpen(false);
+    };
+
+    document.addEventListener('pointerdown', handlePointerDown);
+
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown);
+    };
+  }, [isPinnedOpen]);
+
+  const isOpen = isHovered || isPinnedOpen;
+
+  const togglePinnedOpen = () => {
+    setIsPinnedOpen((current) => !current);
+  };
 
   return (
     <article
       className={`person-card${isOpen ? ' is-open' : ''}${warnings.length > 0 ? ' has-warnings' : ''}`}
       ref={(node) => {
+        cardRef.current = node;
         setCardRef(person.id, node);
       }}
-      onPointerLeave={() => setIsOpen(false)}
+      role="button"
+      tabIndex={0}
+      aria-pressed={isPinnedOpen}
+      aria-expanded={isOpen}
+      onClick={togglePinnedOpen}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          togglePinnedOpen();
+        }
+      }}
+      onPointerEnter={() => setIsHovered(true)}
+      onPointerLeave={() => setIsHovered(false)}
     >
       <div className="person-core">
         <div
           className="person-avatar"
           aria-hidden="true"
-          onPointerEnter={() => setIsOpen(true)}
         >
           {person.avatarImage ? (
             <img src={person.avatarImage} alt="" />
@@ -41,7 +78,7 @@ export function PersonCard({ person, relatedRelations, otherPersonName, setCardR
         </div>
       </div>
 
-      <div className="person-popover">
+      <div className="person-popover" onClick={(event) => event.stopPropagation()}>
         <header className="person-popover-head">
           <div className="person-popover-image" aria-hidden="true">
             {person.avatarImage ? <img src={person.avatarImage} alt="" /> : <span>?</span>}
