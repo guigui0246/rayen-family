@@ -62,7 +62,7 @@
       "aliases": [],
       "avatarImage": "/assets/sun_yujiro.webp",
       "generation": 3,
-      "order": 0,
+      "order": 1,
       "bio": "Son of Rayen and Riko.",
       "socialLinks": {
         "discord": "https://discord.com/users/1229166942217179166",
@@ -75,7 +75,7 @@
       "aliases": [],
       "avatarImage": "/assets/asme.webp",
       "generation": 3,
-      "order": 1,
+      "order": 2,
       "bio": "Cousin of Ino and biggest fan of Riko.",
       "socialLinks": {
         "discord": "https://discord.com/users/991061592101765180",
@@ -92,11 +92,12 @@
       "aliases": [],
       "avatarImage": "/assets/volo.webp",
       "generation": 3,
-      "order": 2,
+      "order": 3,
       "bio": "Step-brother of Ino.",
       "socialLinks": {
         "discord": "https://discord.com/users/1458503065891115267"
-      }
+      },
+      "warnings": ["Not recognised by rayen."]
     },
     {
       "id": "infininoir",
@@ -110,7 +111,7 @@
         "discord": "https://discord.com/users/1376294004034899972",
         "github": "https://github.com/Noir-infini"
       },
-      "warnings": ["Not an official member of the family."]
+      "warnings": ["Recognised by rayen but doesn't have the discord role."]
     },
     {
       "id": "t9si",
@@ -132,11 +133,12 @@
       "aliases": ["Diamond Masters Wife"],
       "avatarImage": "/assets/akry.webp",
       "generation": 3,
-      "order": 3,
+      "order": 4,
       "bio": "Aunt of Ino and wife of Diamond Master.",
       "socialLinks": {
         "discord": "https://discord.com/users/1469215673963122823"
-      }
+      },
+      "warnings": ["Not recognised by rayen."]
     },
     {
       "id": "diamm",
@@ -144,7 +146,7 @@
       "aliases": [],
       "avatarImage": "/assets/diamm.webp",
       "generation": 3,
-      "order": 4,
+      "order": 5,
       "bio": "Uncle of Ino.",
       "socialLinks": {
         "discord": "https://discord.com/users/573903151472836609",
@@ -168,7 +170,7 @@
         "youtube": "https://www.youtube.com/@guigui0246",
         "youtube2": "https://www.youtube.com/@guigui0246"
       },
-      "warnings": ["Not an official member of the family, just the creator of this tree."]
+      "warnings": ["Recognised by rayen but doesn't have the discord role."]
     },
     {
       "id": "taishi",
@@ -179,7 +181,22 @@
       "order": 1,
       "socialLinks": {
         "discord": "https://discord.com/users/121269547452989440"
-      }
+      },
+      "warnings": ["Not recognised by rayen."]
+    },
+    {
+      "id": "questionblock",
+      "name": "QuestionBlock64",
+      "aliases": [],
+      "avatarImage": "/assets/questionblock.webp",
+      "generation": 3,
+      "order": 0,
+      "socialLinks": {
+        "discord": "https://discord.com/users/754343039388090440",
+        "twitch": "https://www.twitch.tv/questionblock64",
+        "youtube": "https://www.youtube.com/channel/UCyGW_-g6lW6-ihuHyWr7-9w"
+      },
+      "warnings": ["Not an official member of the family."]
     }
   ],
   "relations": [
@@ -280,6 +297,13 @@
     {
       "from": "taishi",
       "to": "ino",
+      "label": "parent of",
+      "tone": "family",
+      "reverseLabel": "child of"
+    },
+    {
+      "from": "t9si",
+      "to": "questionblock",
       "label": "parent of",
       "tone": "family",
       "reverseLabel": "child of"
