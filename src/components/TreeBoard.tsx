@@ -72,23 +72,44 @@ function getAvatarBox(node: HTMLElement) {
   return avatar?.getBoundingClientRect() ?? node.getBoundingClientRect();
 }
 
-function getPopoverShift(node: HTMLElement) {
+function getPopoverShift(node: HTMLElement, container: HTMLElement) {
   const popover = node.querySelector<HTMLElement>('.person-popover');
   if (!popover) {
     return 0;
   }
 
+  const margin = 16;
+
   const popoverBox = popover.getBoundingClientRect();
   const cardBox = node.getBoundingClientRect();
-  const viewportWidth = document.documentElement.clientWidth;
-  const margin = 16;
+  const containerBox = container.getBoundingClientRect();
+  // console.log('popoverBox:', popoverBox, 'cardBox:', cardBox, 'containerBox:', containerBox);
+
+  const viewportWidth =
+    window.visualViewport?.width ?? document.documentElement.clientWidth;
+  // console.log('viewportWidth:', viewportWidth);
+
+  const viewportOffset =
+    window.visualViewport?.offsetLeft ?? 0;
+  // console.log('viewportOffset:', viewportOffset);
+
   const cardCenterX = cardBox.left + cardBox.width / 2;
   const currentLeft = cardCenterX - popoverBox.width / 2;
-  const minLeft = margin;
-  const maxLeft = Math.max(margin, viewportWidth - margin - popoverBox.width);
-  const desiredLeft = Math.min(Math.max(currentLeft, minLeft), maxLeft);
 
-  return desiredLeft - currentLeft;
+  const minLeft = Math.max(
+    containerBox.left + margin,
+    margin + viewportOffset
+  );
+
+  const maxLeft = Math.min(
+    containerBox.right - popoverBox.width - margin,
+    viewportOffset + viewportWidth - popoverBox.width - margin
+  );
+  // console.log('currentLeft:', currentLeft, 'minLeft:', minLeft, 'maxLeft:', maxLeft);
+
+  const clampedLeft = Math.max(minLeft, Math.min(currentLeft, maxLeft));
+
+  return clampedLeft - currentLeft;
 }
 
 export function TreeBoard({ people, relations, peopleById }: TreeBoardProps) {
@@ -132,7 +153,9 @@ export function TreeBoard({ people, relations, peopleById }: TreeBoardProps) {
       const pairCounts = new Map<string, number>();
 
       for (const node of cardRefs.current.values()) {
-        node.style.setProperty('--popover-shift', `${getPopoverShift(node)}px`);
+        if (node.classList.contains('is-open')) {
+          node.style.setProperty('--popover-shift', `${getPopoverShift(node, container)}px`);
+        }
       }
 
       const nextLines = relations.flatMap((relation, index) => {
@@ -209,34 +232,27 @@ export function TreeBoard({ people, relations, peopleById }: TreeBoardProps) {
       setConnectorLines(nextLines);
     };
 
-    let animationFrame = 0;
-    const scheduleUpdate = () => {
-      window.cancelAnimationFrame(animationFrame);
-      animationFrame = window.requestAnimationFrame(updateLines);
+    const MIN_LAG = 100;
+    let lag_timeout: number = 0;
+    let rafId: number;
+    let last: number = 0;
+
+    const loop = (t: number) => {
+      lag_timeout += t - last;
+      if (lag_timeout > MIN_LAG) {
+        console.log('Loop tick:', t, ', lag timeout:', lag_timeout);
+        lag_timeout = 0;
+        updateLines();
+      }
+      last = t;
+
+      rafId = requestAnimationFrame(loop);
     };
 
-    updateLines();
-
-    const resizeObserver = new ResizeObserver(() => {
-      scheduleUpdate();
-    });
-
-    if (containerRef.current) {
-      resizeObserver.observe(containerRef.current);
-    }
-
-    for (const node of cardRefs.current.values()) {
-      resizeObserver.observe(node);
-    }
-
-    window.addEventListener('resize', scheduleUpdate);
-    window.addEventListener('scroll', scheduleUpdate, true);
+    loop(0);
 
     return () => {
-      resizeObserver.disconnect();
-      window.cancelAnimationFrame(animationFrame);
-      window.removeEventListener('resize', scheduleUpdate);
-      window.removeEventListener('scroll', scheduleUpdate, true);
+      window.cancelAnimationFrame(rafId);
     };
   }, [relations]);
 
