@@ -24,11 +24,11 @@ function getSpecialLabel(generation: number) {
     case 0:
       return ' (Before Tsundere Bot aka Riko)';
     case 1:
-      return ' (<1000 subs)';
+      return ' (0-1000 subs)';
     case 2:
-      return ' (<20000 subs)';
+      return ' (1000-20000 subs)';
     case 3:
-      return ' (>=20000 subs)';
+      return ' (20000-50000 subs)';
     default:
       return '';
   }
