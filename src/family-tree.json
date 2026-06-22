@@ -317,6 +317,17 @@
         "twitch2": "https://www.twitch.tv/lordshadowcid"
       },
       "warnings": ["Not an official member of the family."]
+    },
+    {
+      "id": "bluecloth",
+      "name": "Blue Cloth",
+      "aliases": [],
+      "generation": 3,
+      "order": 9,
+      "bio": "The cam hider.",
+      "socialLinks": {
+      },
+      "warnings": ["Not an official member of the family."]
     }
   ],
   "relations": [
@@ -499,6 +510,13 @@
       "label": "held captive",
       "tone": "custom",
       "reverseLabel": "was captive of"
+    },
+    {
+      "from": "rayen",
+      "to": "bluecloth",
+      "label": "uses to hide camera",
+      "tone": "custom",
+      "reverseLabel": "hides camera of"
     }
   ]
 }

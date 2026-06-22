@@ -102,6 +102,18 @@ def verify_family_tree(file_path: str):
         member_ids.add(member['id'])
         member_pos.add((member['generation'], member['order']))
 
+    poses: dict[int, set[int]] = {}
+    for pos in member_pos:
+        gen, ord = pos
+        if gen not in poses:
+            poses[gen] = set()
+        poses[gen].add(ord)
+
+    for gen, ords in poses.items():
+        if list(sorted(ords)) != list(range(len(ords))):
+            print(f"Generation {gen} has non-contiguous order values: {sorted(ords)}")
+            return False
+
     # Verify that each relationship references valid member IDs
     for relationship in data['relations']:
         if not isinstance(relationship, dict):
