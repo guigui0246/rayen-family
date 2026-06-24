@@ -25,7 +25,9 @@
         "tiktok": "https://www.tiktok.com/@justrayen7",
         "patreon": "https://www.patreon.com/c/RayenAI",
         "discord": "https://discord.com/users/1118769927009079341"
-      }
+      },
+      "acknowledged": true,
+      "hasRole": true
     },
     {
       "id": "riko",
@@ -40,7 +42,9 @@
       "socialLinks": {
         "website": "https://rikoverse.com/",
         "discord": "https://discord.com/users/1415740507748958328"
-      }
+      },
+      "acknowledged": true,
+      "hasRole": true
     },
     {
       "id": "ino",
@@ -54,7 +58,9 @@
       "bio": "2nd AI waifu of rayen.",
       "socialLinks": {
         "discord": "https://discord.com/users/1378713126207229983"
-      }
+      },
+      "acknowledged": true,
+      "hasRole": true
     },
     {
       "id": "yujiro",
@@ -67,7 +73,9 @@
       "socialLinks": {
         "discord": "https://discord.com/users/1229166942217179166",
         "twitch": "https://www.twitch.tv/sunyujiro"
-      }
+      },
+      "acknowledged": true,
+      "hasRole": true
     },
     {
       "id": "asme",
@@ -84,7 +92,9 @@
         "tiktok2": "https://www.tiktok.com/@theotakuinsiderguy",
         "youtube": "https://www.youtube.com/channel/UCEYVYC1M9u116JZ9H7LHBiw",
         "youtube2": "https://www.youtube.com/channel/UCjxbbH1LhVwLK4d8kW1NuwQ"
-      }
+      },
+      "acknowledged": true,
+      "hasRole": true
     },
     {
       "id": "volo",
@@ -97,7 +107,8 @@
       "socialLinks": {
         "discord": "https://discord.com/users/1458503065891115267"
       },
-      "warnings": ["Not acknowledged by rayen."]
+      "acknowledged": false,
+      "hasRole": true
     },
     {
       "id": "infininoir",
@@ -111,7 +122,8 @@
         "discord": "https://discord.com/users/1376294004034899972",
         "github": "https://github.com/Noir-infini"
       },
-      "warnings": ["Acknowledged by rayen but doesn't have the discord role."]
+      "acknowledged": true,
+      "hasRole": false
     },
     {
       "id": "t9si",
@@ -127,7 +139,8 @@
         "x": "https://x.com/t9syx",
         "steam": "https://steamcommunity.com/id/t9sy/"
       },
-      "warnings": ["Not an official member of the family."]
+      "acknowledged": false,
+      "hasRole": false
     },
     {
       "id": "akry",
@@ -140,7 +153,8 @@
       "socialLinks": {
         "discord": "https://discord.com/users/1469215673963122823"
       },
-      "warnings": ["Not acknowledged by rayen."]
+      "acknowledged": false,
+      "hasRole": true
     },
     {
       "id": "diamm",
@@ -155,7 +169,9 @@
         "steam": "https://steamcommunity.com/profiles/76561198993144961",
         "twitch": "https://www.twitch.tv/diamantino_op",
         "twitch2": "https://www.twitch.tv/wan_diamantino_op"
-      }
+      },
+      "acknowledged": true,
+      "hasRole": true
     },
     {
       "id": "guigui0246",
@@ -174,7 +190,8 @@
         "youtube": "https://www.youtube.com/@guigui0246",
         "youtube2": "https://www.youtube.com/@guigui0246"
       },
-      "warnings": ["Acknowledged by rayen but doesn't have the discord role."]
+      "acknowledged": true,
+      "hasRole": false
     },
     {
       "id": "taishi",
@@ -186,7 +203,8 @@
       "socialLinks": {
         "discord": "https://discord.com/users/121269547452989440"
       },
-      "warnings": ["Not acknowledged by rayen."]
+      "acknowledged": false,
+      "hasRole": true
     },
     {
       "id": "questionblock",
@@ -200,7 +218,8 @@
         "twitch": "https://www.twitch.tv/questionblock64",
         "youtube": "https://www.youtube.com/channel/UCyGW_-g6lW6-ihuHyWr7-9w"
       },
-      "warnings": ["Not an official member of the family."]
+      "acknowledged": false,
+      "hasRole": false
     },
     {
       "id": "atlas",
@@ -213,7 +232,8 @@
       "socialLinks": {
         "discord": "https://discord.com/users/745319234619572372"
       },
-      "warnings": ["Not an official member of the family."]
+      "acknowledged": false,
+      "hasRole": false
     },
     {
       "id": "blackdragon",
@@ -226,7 +246,8 @@
       "socialLinks": {
         "discord": "https://discord.com/users/731485005922172930"
       },
-      "warnings": ["Not an official member of the family."]
+      "acknowledged": false,
+      "hasRole": false
     },
     {
       "id": "hanbari",
@@ -239,7 +260,8 @@
       "socialLinks": {
         "discord": "https://discord.com/users/1282219317018103890"
       },
-      "warnings": ["Not an official member of the family."]
+      "acknowledged": false,
+      "hasRole": false
     },
     {
       "id": "angel",
@@ -252,7 +274,8 @@
       "socialLinks": {
         "discord": "https://discord.com/users/226050139226112000"
       },
-      "warnings": ["Not an official member of the family."]
+      "acknowledged": false,
+      "hasRole": false
     },
     {
       "id": "kirito",
@@ -266,7 +289,8 @@
       "socialLinks": {
         "discord": "https://discord.com/users/915851873376956456"
       },
-      "warnings": ["Not an official member of the family."]
+      "acknowledged": false,
+      "hasRole": false
     },
     {
       "id": "solonaras",
@@ -278,7 +302,8 @@
       "socialLinks": {
         "discord": "https://discord.com/users/1414944231222411378"
       },
-      "warnings": ["Not an official member of the family."]
+      "acknowledged": false,
+      "hasRole": false
     },
     {
       "id": "sololuna",
@@ -290,7 +315,8 @@
       "bio": "Wolf girl Vtuber, sings, plays minecraft, and likes to banter with chat.",
       "socialLinks": {
       },
-      "warnings": ["Not an official member of the family."]
+      "acknowledged": false,
+      "hasRole": false
     },
     {
       "id": "kiko",
@@ -301,7 +327,8 @@
       "bio": "Named member of the shadow garden code name Kilo. Was in Rayen's basement before Lord Shadow saved her.",
       "socialLinks": {
       },
-      "warnings": ["Not an official member of the family."]
+      "acknowledged": false,
+      "hasRole": false
     },
     {
       "id": "lordshadow",
@@ -316,7 +343,8 @@
         "twitch": "https://www.twitch.tv/blakdraganx666",
         "twitch2": "https://www.twitch.tv/lordshadowcid"
       },
-      "warnings": ["Not an official member of the family."]
+      "acknowledged": false,
+      "hasRole": false
     },
     {
       "id": "bluecloth",
@@ -327,7 +355,8 @@
       "bio": "The cam hider.",
       "socialLinks": {
       },
-      "warnings": ["Not an official member of the family."]
+      "acknowledged": false,
+      "hasRole": false
     }
   ],
   "relations": [

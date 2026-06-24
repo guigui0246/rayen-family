@@ -23,6 +23,8 @@ class Person(TypedDict):
     avatarImage: Optional[str]
     generation: int
     order: int
+    acknowledged: bool
+    hasRole: bool
     bio: Optional[str]
     socialLinks: Optional[dict[str, str]]
     warnings: Optional[list[str]]
@@ -82,6 +84,12 @@ def verify_family_tree(file_path: str):
         if 'order' not in member:
             print(f"Invalid member data: missing 'order' key for member with ID {member['id']}.")
             return False
+        if 'acknowledged' not in member:
+            print(f"Invalid member data: missing 'acknowledged' key for member with ID {member['id']}.")
+            return False
+        if 'hasRole' not in member:
+            print(f"Invalid member data: missing 'hasRole' key for member with ID {member['id']}.")
+            return False
         if not isinstance(member['generation'], int) or member['generation'] < 0:
             print(f"Invalid generation value for member with ID {member['id']}: {member['generation']}")
             return False
@@ -93,8 +101,9 @@ def verify_family_tree(file_path: str):
                 print(f"Invalid warnings format for member with ID {member['id']}: should be a list.")
                 return False
             for warning in member['warnings']:
-                if warning not in ALLOWED_WARNINGS:
-                    print(f"Invalid warning for member with ID {member['id']}: {warning}")
+                if warning in ALLOWED_WARNINGS:
+                    print(f"Invalid warning for member with ID {member['id']}, "
+                          "please use \"acknoledged\" and \"hasRole\" instead.")
                     return False
         if (member['generation'], member['order']) in member_pos:
             print(f"Duplicate position found: generation {member['generation']}, order {member['order']}")

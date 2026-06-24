@@ -11,6 +11,22 @@ type PersonCardProps = {
   openPersonId: string | null;
 };
 
+function getWarningMessage(acknowledged: boolean, hasRole: boolean): string {
+  if (!acknowledged && !hasRole) {
+    return 'Not an official member of the family.';
+  }
+
+  if (!acknowledged) {
+    return 'Not acknowledged by rayen.';
+  }
+
+  if (!hasRole) {
+    return "Acknowledged by rayen but doesn't have the discord role.";
+  }
+
+  throw new Error('Invalid state: both acknowledged and hasRole are true.');
+}
+
 export function PersonCard({
   person,
   relatedRelations,
@@ -26,6 +42,11 @@ export function PersonCard({
   const avatarLabel = person.avatarImage ? person.name : '?';
   const aliases = person.aliases ?? [];
   const warnings = person.warnings ?? [];
+  const acknowledged = person.acknowledged;
+  const hasRole = person.hasRole;
+  if (!(acknowledged && hasRole)) {
+    warnings.push(getWarningMessage(acknowledged, hasRole));
+  }
 
   useEffect(() => {
     const handlePointerDown = (event: PointerEvent) => {
