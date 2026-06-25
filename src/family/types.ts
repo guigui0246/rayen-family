@@ -14,6 +14,9 @@ export type Person = {
   socialLinks?: Record<string, string>;
   acknowledged: boolean;
   hasRole: boolean;
+  modifiers?: {
+    strike?: boolean;
+  };
 };
 
 export type Relation = {

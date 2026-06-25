@@ -129,7 +129,7 @@
       "id": "t9si",
       "name": "Riko",
       "aliases": ["Jynx", "t9sy", "t9si"],
-      "avatarImage": "/assets/t9si.webp",
+      "avatarImage": "/assets/t9si.png",
       "generation": 2,
       "order": 1,
       "bio": "Clone of Riko.",
@@ -219,7 +219,11 @@
         "youtube": "https://www.youtube.com/channel/UCyGW_-g6lW6-ihuHyWr7-9w"
       },
       "acknowledged": false,
-      "hasRole": false
+      "hasRole": false,
+      "modifiers": {
+        "strike": true
+      },
+      "bio": "For child safety reasons, a parent of this person has requested that their child be removed from the family tree."
     },
     {
       "id": "atlas",

@@ -12,6 +12,10 @@ ALLOWED_WARNINGS = {
 }
 
 
+class Modifier(TypedDict):
+    strike: Optional[bool]
+
+
 class Person(TypedDict):
     id: str
     name: str
@@ -28,6 +32,7 @@ class Person(TypedDict):
     bio: Optional[str]
     socialLinks: Optional[dict[str, str]]
     warnings: Optional[list[str]]
+    modifiers: Optional[Modifier]
 
 
 Relationship = TypedDict('Relationship', {
@@ -104,6 +109,14 @@ def verify_family_tree(file_path: str):
                 if warning in ALLOWED_WARNINGS:
                     print(f"Invalid warning for member with ID {member['id']}, "
                           "please use \"acknoledged\" and \"hasRole\" instead.")
+                    return False
+        if 'modifiers' in member:
+            if not isinstance(member['modifiers'], dict):
+                print(f"Invalid modifiers format for member with ID {member['id']}: should be a dictionary.")
+                return False
+            for modifier, value in member['modifiers'].items():
+                if not isinstance(value, bool):
+                    print(f"Invalid modifier value for member with ID {member['id']}: {modifier} should be a boolean.")
                     return False
         if (member['generation'], member['order']) in member_pos:
             print(f"Duplicate position found: generation {member['generation']}, order {member['order']}")

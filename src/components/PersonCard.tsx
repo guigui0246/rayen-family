@@ -47,6 +47,7 @@ export function PersonCard({
   if (!(acknowledged && hasRole)) {
     warnings.push(getWarningMessage(acknowledged, hasRole));
   }
+  const modifiers = person.modifiers ?? {};
 
   useEffect(() => {
     const handlePointerDown = (event: PointerEvent) => {
@@ -112,7 +113,11 @@ export function PersonCard({
 
         <div className="person-label">
           <p className="person-role">{person.role ?? ''}</p>
-          <h2>{person.name}</h2>
+          <h2
+            style={{
+              textDecoration: modifiers.strike ? 'line-through' : 'none',
+            }}
+          >{person.name}</h2>
         </div>
       </div>
 
@@ -124,7 +129,11 @@ export function PersonCard({
           <div className="person-popover-meta">
             <p className="person-id">{person.id}</p>
             <p className="person-role">{person.role ?? ''}</p>
-            <h3>{person.name}</h3>
+            <h3
+              style={{
+                textDecoration: modifiers.strike ? 'line-through' : 'none',
+              }}
+            >{person.name}</h3>
           </div>
         </header>
 
