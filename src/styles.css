@@ -660,7 +660,7 @@ select {
   inset: 0;
   border-radius: inherit;
   background-image:
-    linear-gradient(180deg, rgba(8, 8, 10, 0.18) 0%, rgba(8, 8, 10, 0.84) 100%),
+    linear-gradient(180deg, rgba(8, 8, 10, 0.48) 0%, rgba(8, 8, 10, 0.84) 100%),
     var(--person-popover-bg);
   background-position: center top, center top;
   background-repeat: no-repeat, repeat;
