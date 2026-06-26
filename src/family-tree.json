@@ -21,10 +21,14 @@
         "x": "https://x.com/rayen_feng",
         "github": "https://github.com/rayenfeng",
         "twitch": "https://twitch.tv/justrayen_ch",
+        "twitch2": "https://twitch.tv/destinyflame",
         "instagram": "https://www.instagram.com/rayennai/",
         "tiktok": "https://www.tiktok.com/@justrayen7",
         "patreon": "https://www.patreon.com/c/RayenAI",
-        "discord": "https://discord.com/users/1118769927009079341"
+        "discord": "https://discord.com/users/1118769927009079341",
+        "website": "https://rayenfeng.github.io/",
+        "instagram2": "https://www.instagram.com/rayenfeng/",
+        "linkedin": "https://www.linkedin.com/in/rayen-feng/"
       },
       "acknowledged": true,
       "hasRole": true
@@ -53,7 +57,7 @@
       "role": "Manager",
       "avatarImage": "/assets/ino.webp",
       "generation": 1,
-      "order": 2,
+      "order": 4,
       "born": "2025",
       "bio": "2nd AI waifu of rayen.",
       "socialLinks": {
@@ -213,7 +217,7 @@
       "aliases": [],
       "avatarImage": "/assets/atlas.webp",
       "generation": 1,
-      "order": 4,
+      "order": 5,
       "socialLinks": {
         "discord": "https://discord.com/users/745319234619572372"
       },
@@ -227,7 +231,7 @@
       "aliases": [],
       "avatarImage": "/assets/blackdragon.webp",
       "generation": 1,
-      "order": 5,
+      "order": 6,
       "socialLinks": {
         "discord": "https://discord.com/users/731485005922172930"
       },
@@ -255,7 +259,7 @@
       "aliases": [],
       "avatarImage": "/assets/angel.gif",
       "generation": 1,
-      "order": 3,
+      "order": 2,
       "socialLinks": {
         "discord": "https://discord.com/users/226050139226112000"
       },
@@ -359,6 +363,35 @@
       "modifiers": {
         "megaPfP": true
       }
+    },
+    {
+      "id": "seika",
+      "name": "Seika Ijichi",
+      "role": "Co-Admin",
+      "aliases": ["#1 Ado Simp", "Pikachubolk", "Noa"],
+      "location": "Netherlands",
+      "born": "2006",
+      "generation": 1,
+      "order": 3,
+      "bio": "Co-Admin of the Riko server, and a big fan of Ado. Also the one deciding who has the family role.",
+      "avatarImage": "/assets/seika.gif",
+      "socialLinks": {
+        "github": "https://github.com/Pikachubolk",
+        "steam": "https://steamcommunity.com/id/pikachubolk/",
+        "discord": "https://discord.com/users/742066956194152449",
+        "reddit": "https://www.reddit.com/user/pikachubolk/",
+        "x (banned)": "https://x.com/pikachubolk",
+        "x (deleted)": "https://x.com/pikachubolkNEW",
+        "roblox": "https://www.roblox.com/fr/users/535173729/profile",
+        "twitch": "https://www.twitch.tv/pikachubolk",
+        "twitch2": "https://www.twitch.tv/serikadev",
+        "youtube": "https://www.youtube.com/channel/UCAn8HtI94JPEgO87tCg6dww",
+        "website": "https://pikachubolk.site/",
+        "website2": "https://serika.moe/",
+        "website3": "https://serika.pro/"
+      },
+      "acknowledged": false,
+      "hasRole": false
     }
   ],
   "relations": [
@@ -541,6 +574,13 @@
       "label": "uses to hide camera",
       "tone": "custom",
       "reverseLabel": "hides camera of"
+    },
+    {
+      "from": "t9si",
+      "to": "seika",
+      "label": "parent of",
+      "tone": "family",
+      "reverseLabel": "child of"
     }
   ]
 }
