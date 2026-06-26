@@ -120,7 +120,7 @@
       "aliases": ["Ranni's Consort"],
       "avatarImage": "/assets/infininoir.webp",
       "generation": 2,
-      "order": 4,
+      "order": 5,
       "bio": "Greatest worshipper of Ino.",
       "socialLinks": {
         "discord": "https://discord.com/users/1376294004034899972",
@@ -287,7 +287,7 @@
       "aliases": [],
       "avatarImage": "/assets/solonaras.png",
       "generation": 2,
-      "order": 3,
+      "order": 4,
       "socialLinks": {
         "discord": "https://discord.com/users/1414944231222411378"
       },
@@ -325,7 +325,7 @@
       "aliases": ["blakdraganx666"],
       "avatarImage": "/assets/lordshadow.webp",
       "generation": 2,
-      "order": 5,
+      "order": 6,
       "bio": "Saved Kiko from Rayen's basement.",
       "socialLinks": {
         "discord": "https://discord.com/users/717372737655537756",
@@ -353,7 +353,7 @@
       "name": "20univers08",
       "aliases": ["The universe itself"],
       "generation": 2,
-      "order": 6,
+      "order": 7,
       "avatarImage": "/assets/universe.gif",
       "bio": "The universe.",
       "socialLinks": {
@@ -389,6 +389,20 @@
         "website": "https://pikachubolk.site/",
         "website2": "https://serika.moe/",
         "website3": "https://serika.pro/"
+      },
+      "acknowledged": false,
+      "hasRole": false
+    },
+    {
+      "id": "serika",
+      "name": "Serika",
+      "role": "",
+      "aliases": [],
+      "location": "Netherlands",
+      "born": "2006",
+      "generation": 2,
+      "order": 3,
+      "socialLinks": {
       },
       "acknowledged": false,
       "hasRole": false
@@ -581,6 +595,12 @@
       "label": "parent of",
       "tone": "family",
       "reverseLabel": "child of"
+    },
+    {
+      "from": "seika",
+      "to": "serika",
+      "label": "married",
+      "tone": "romance"
     }
   ]
 }
