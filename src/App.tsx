@@ -295,6 +295,35 @@ export default function App() {
         peopleById={peopleById}
         onMegaPfpChange={handleMegaPfpChange}
       />
+      <footer className="site-footer">
+        <div className="site-footer-top">
+          <div className="site-footer-brand">
+            <p className="terminal-line">rayen@family-tree ~</p>
+            <h2>{settings.title}</h2>
+            <p className="site-footer-tagline">{settings.subtitle}</p>
+          </div>
+          <div className="site-footer-stats">
+            <div className="site-footer-stat">
+              <span className="site-footer-stat-value">{settings.people.length}</span>
+              <span className="site-footer-stat-label">Members</span>
+            </div>
+            <div className="site-footer-stat">
+              <span className="site-footer-stat-value">{settings.relations.length}</span>
+              <span className="site-footer-stat-label">Relations</span>
+            </div>
+          </div>
+          <nav className="site-footer-links" aria-label="Request an edit">
+            <span className="site-footer-links-label">Request an edit</span>
+            <button type="button" onClick={openEditDiscordRequest}>Discord</button>
+            <button type="button" onClick={openEditMailRequest}>Email</button>
+            <button type="button" onClick={openEditGithubRequest}>GitHub</button>
+          </nav>
+        </div>
+        <div className="site-footer-bottom">
+          <p>Read only - hover a person to open their record.</p>
+          <p>&copy; {new Date().getFullYear()} rayen family tree</p>
+        </div>
+      </footer>
     </main>
   );
 }
