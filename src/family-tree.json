@@ -405,6 +405,28 @@
       },
       "acknowledged": false,
       "hasRole": false
+    },
+    {
+      "id": "bee",
+      "name": "Lychibe",
+      "role": "bee",
+      "aliases": ["Bee", "Lychi", "Queen Bee", "Lil' Stinger", "Babee", "Kusogaki", "Brat Bee", "Lil sis"],
+      "avatarImage": "/assets/bee.jpg",
+      "generation": 3,
+      "order": 9,
+      "bio": "I'm a bee",
+      "socialLinks": {
+        "youtube": "https://www.youtube.com/@lychibe",
+        "twitch": "https://www.twitch.tv/lychibe_ch",
+        "twitter": "https://x.com/lychibe",
+        "tiktok": "https://www.tiktok.com/@lychibe",
+        "instagram": "https://www.instagram.com/lychibe_/",
+        "bluesky": "https://bsky.app/profile/lychibe.bsky.social",
+        "discord": "https://discord.gg/KEYraKVxMc",
+        "linktree": "https://linktr.ee/Lychibe"
+      },
+      "acknowledged": false,
+      "hasRole": false
     }
   ],
   "relations": [
@@ -600,6 +622,12 @@
       "to": "serika",
       "label": "married",
       "tone": "romance"
+    },
+    {
+      "from": "bee",
+      "to": "rayen",
+      "label": "siblings",
+      "tone": "family"
     }
   ]
 }
