@@ -69,7 +69,7 @@ export default function App() {
     [filters],
   );
   const visibleRelations = useMemo(
-    () => filterRelations(settings.relations, visiblePeople, filters),
+    () => filterRelations(settings.relations, visiblePeople, filters).reverse(),
     [filters, visiblePeople],
   );
 
