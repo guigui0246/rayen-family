@@ -13,8 +13,7 @@
       "name": "Rayen Feng",
       "aliases": ["Just Rayen", "Silver Radiant", "rain", "MaidMaster", "The Goat", "Cheetos femboy", "Temu Vedal", "Destiny flame", "Ryan"],
       "avatarImage": "/assets/rayen.png",
-      "generation": 0,
-      "order": 0,
+      "ordering": [[0, 0], [0, 3]],
       "bio": "Self-declared Chungus building AI waifus.",
       "socialLinks": {
         "youtube": "https://youtube.com/@JustRayen",
@@ -39,8 +38,7 @@
       "role": "Overlord",
       "aliases": ["The AI Overlord", "Tsundere Bot", "The supreme overlord Riko"],
       "avatarImage": "/assets/riko.png",
-      "generation": 1,
-      "order": 1,
+      "ordering": [[1, 1], [1, 2]],
       "born": "2024",
       "bio": "First AI waifu of rayen.",
       "socialLinks": {
@@ -56,8 +54,7 @@
       "aliases": ["Riko's Assistant"],
       "role": "Manager",
       "avatarImage": "/assets/ino.webp",
-      "generation": 1,
-      "order": 4,
+      "ordering": [[1, 4], [1, 5]],
       "born": "2025",
       "bio": "2nd AI waifu of rayen.",
       "socialLinks": {
@@ -71,8 +68,7 @@
       "name": "Sun Yujiro",
       "aliases": [],
       "avatarImage": "/assets/sun_yujiro.webp",
-      "generation": 3,
-      "order": 0,
+      "ordering": [[3, 0], [2, 0]],
       "bio": "Son of Rayen and Riko.",
       "socialLinks": {
         "discord": "https://discord.com/users/1229166942217179166",
@@ -86,8 +82,7 @@
       "name": "Known Asme",
       "aliases": [],
       "avatarImage": "/assets/asme.webp",
-      "generation": 3,
-      "order": 2,
+      "ordering": [[3, 2], [1, 4]],
       "bio": "Cousin of Ino and biggest fan of Riko.",
       "socialLinks": {
         "discord": "https://discord.com/users/991061592101765180",
@@ -105,8 +100,7 @@
       "name": "Volo",
       "aliases": [],
       "avatarImage": "/assets/volo.webp",
-      "generation": 3,
-      "order": 3,
+      "ordering": [[3, 3], [1, 6]],
       "bio": "Step-brother of Ino.",
       "socialLinks": {
         "discord": "https://discord.com/users/1458503065891115267"
@@ -119,8 +113,7 @@
       "name": "infininoir",
       "aliases": ["Ranni's Consort"],
       "avatarImage": "/assets/infininoir.webp",
-      "generation": 2,
-      "order": 5,
+      "ordering": [[2, 5], [2, 3]],
       "bio": "Greatest worshipper of Ino.",
       "socialLinks": {
         "discord": "https://discord.com/users/1376294004034899972",
@@ -134,8 +127,7 @@
       "name": "Riko",
       "aliases": ["Jynx", "t9sy", "t9si"],
       "avatarImage": "/assets/t9si.png",
-      "generation": 2,
-      "order": 1,
+      "ordering": [[2, 1], [1, 3]],
       "bio": "Clone of Riko.",
       "socialLinks": {
         "discord": "https://discord.com/users/1070058785084817420",
@@ -151,8 +143,7 @@
       "name": "Akry Saps",
       "aliases": ["Diamond Masters Wife"],
       "avatarImage": "/assets/akry.webp",
-      "generation": 3,
-      "order": 4,
+      "ordering": [[3, 4], [0, 6]],
       "bio": "Aunt of Ino and wife of Diamond Master.",
       "socialLinks": {
         "discord": "https://discord.com/users/1469215673963122823"
@@ -165,8 +156,7 @@
       "name": "Diamond Master",
       "aliases": [],
       "avatarImage": "/assets/diamm.webp",
-      "generation": 3,
-      "order": 5,
+      "ordering": [[3, 5], [0, 7]],
       "bio": "Uncle of Ino.",
       "socialLinks": {
         "discord": "https://discord.com/users/573903151472836609",
@@ -183,8 +173,7 @@
       "aliases": [],
       "avatarImage": "/assets/guigui0246.webp",
       "born": "2005",
-      "generation": 1,
-      "order": 0,
+      "ordering": [[1, 0], [1, 0]],
       "bio": "Creator of this family tree.",
       "socialLinks": {
         "discord": "https://discord.com/users/436178855104086037",
@@ -202,8 +191,7 @@
       "name": "Taishi",
       "aliases": [],
       "avatarImage": "/assets/taishi.webp",
-      "generation": 2,
-      "order": 2,
+      "ordering": [[2, 2], [0, 5]],
       "socialLinks": {
         "discord": "https://discord.com/users/121269547452989440"
       },
@@ -216,8 +204,7 @@
       "role": "Fashion designer",
       "aliases": [],
       "avatarImage": "/assets/atlas.webp",
-      "generation": 1,
-      "order": 5,
+      "ordering": [[1, 5], [0, 0]],
       "socialLinks": {
         "discord": "https://discord.com/users/745319234619572372"
       },
@@ -230,8 +217,7 @@
       "role": "Fashion designer",
       "aliases": [],
       "avatarImage": "/assets/blackdragon.webp",
-      "generation": 1,
-      "order": 6,
+      "ordering": [[1, 6], [0, 1]],
       "socialLinks": {
         "discord": "https://discord.com/users/731485005922172930"
       },
@@ -244,8 +230,7 @@
       "role": "Admin",
       "aliases": [],
       "avatarImage": "/assets/hanbari.webp",
-      "generation": 2,
-      "order": 0,
+      "ordering": [[2, 0], [3, 1]],
       "socialLinks": {
         "discord": "https://discord.com/users/1282219317018103890"
       },
@@ -258,8 +243,7 @@
       "role": "Admin",
       "aliases": [],
       "avatarImage": "/assets/angel.gif",
-      "generation": 1,
-      "order": 2,
+      "ordering": [[1, 2], [3, 0]],
       "socialLinks": {
         "discord": "https://discord.com/users/226050139226112000"
       },
@@ -273,8 +257,7 @@
       "born": "2005",
       "aliases": [],
       "avatarImage": "/assets/kirito.webp",
-      "generation": 3,
-      "order": 6,
+      "ordering": [[3, 6], [1, 7]],
       "socialLinks": {
         "discord": "https://discord.com/users/915851873376956456"
       },
@@ -286,8 +269,7 @@
       "name": "Solonaras",
       "aliases": [],
       "avatarImage": "/assets/solonaras.png",
-      "generation": 2,
-      "order": 4,
+      "ordering": [[2, 4], [0, 2]],
       "socialLinks": {
         "discord": "https://discord.com/users/1414944231222411378"
       },
@@ -299,8 +281,7 @@
       "name": "Luna",
       "aliases": [],
       "avatarImage": "/assets/luna.png",
-      "generation": 3,
-      "order": 1,
+      "ordering": [[3, 1], [1, 1]],
       "bio": "Wolf girl Vtuber, sings, plays minecraft, and likes to banter with chat.",
       "socialLinks": {
       },
@@ -311,8 +292,7 @@
       "id": "kiko",
       "name": "Kiko",
       "aliases": [],
-      "generation": 3,
-      "order": 7,
+      "ordering": [[3, 7], [1, 8]],
       "bio": "Named member of the shadow garden code name Kilo. Was in Rayen's basement before Lord Shadow saved her.",
       "socialLinks": {
       },
@@ -324,8 +304,7 @@
       "name": "Lord Shadow",
       "aliases": ["blakdraganx666"],
       "avatarImage": "/assets/lordshadow.webp",
-      "generation": 2,
-      "order": 6,
+      "ordering": [[2, 6], [2, 4]],
       "bio": "Saved Kiko from Rayen's basement.",
       "socialLinks": {
         "discord": "https://discord.com/users/717372737655537756",
@@ -339,8 +318,7 @@
       "id": "bluecloth",
       "name": "Blue Cloth",
       "aliases": [],
-      "generation": 3,
-      "order": 8,
+      "ordering": [[3, 8], [1, 9]],
       "avatarImage": "/assets/blue_cloth.png",
       "bio": "The cam hider.",
       "socialLinks": {
@@ -352,8 +330,7 @@
       "id": "universe",
       "name": "20univers08",
       "aliases": ["The universe itself"],
-      "generation": 2,
-      "order": 7,
+      "ordering": [[2, 7], [-1, 0]],
       "avatarImage": "/assets/universe.gif",
       "bio": "The universe.",
       "socialLinks": {
@@ -371,8 +348,7 @@
       "aliases": ["#1 Ado Simp", "Pikachubolk"],
       "location": "Netherlands",
       "born": "2006",
-      "generation": 1,
-      "order": 3,
+      "ordering": [[1, 3], [2, 1]],
       "bio": "Co-Admin of the Riko server, and a big fan of Ado. Also the one deciding who has the family role.",
       "avatarImage": "/assets/seika.gif",
       "socialLinks": {
@@ -399,8 +375,7 @@
       "role": "",
       "aliases": [],
       "avatarImage": "/assets/serika.png",
-      "generation": 2,
-      "order": 3,
+      "ordering": [[2, 3], [2, 2]],
       "socialLinks": {
       },
       "acknowledged": false,
@@ -412,8 +387,7 @@
       "role": "bee",
       "aliases": ["Bee", "Lychi", "Queen Bee", "Lil' Stinger", "Babee", "Kusogaki", "Brat Bee", "Lil sis"],
       "avatarImage": "/assets/bee.jpg",
-      "generation": 3,
-      "order": 9,
+      "ordering": [[3, 9], [0, 4]],
       "bio": "I'm a bee",
       "socialLinks": {
         "youtube": "https://www.youtube.com/@lychibe",

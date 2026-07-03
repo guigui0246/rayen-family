@@ -5,7 +5,7 @@ import { Hero } from './components/Hero';
 import { Legend } from './components/Legend';
 import { TreeBoard } from './components/TreeBoard';
 import { buildFilterOptions, createInitialFilterState, filterPeople, filterRelations } from './family/filtering';
-import type { Person, TreeSettings } from './family/types';
+import type { JsonPerson, TreeSettings } from './family/types';
 
 const settings = treeData as unknown as TreeSettings;
 const updateApiBaseUrl = 'https://riko-family-update.guigui0246.workers.dev';
@@ -54,7 +54,7 @@ async function readJsonResponse<T>(response: Response) {
 
 export default function App() {
   const peopleById = useMemo(
-    () => new Map<string, Person>(settings.people.map((person) => [person.id, person])),
+    () => new Map<string, JsonPerson>(settings.people.map((person) => [person.id, person])),
     [],
   );
   const sequenceRef = useRef(0);

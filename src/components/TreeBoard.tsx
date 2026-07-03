@@ -1,12 +1,12 @@
 import { useLayoutEffect, useMemo, useRef, useState } from 'react';
-import type { Person, Relation } from '../family/types';
+import type { GenOrder, JsonPerson, Person, Relation } from '../family/types';
 import { PersonCard } from './PersonCard';
 import { updateLegend } from './updates';
 
 type TreeBoardProps = {
-  people: Person[];
+  people: JsonPerson[];
   relations: Relation[];
-  peopleById: Map<string, Person>;
+  peopleById: Map<string, JsonPerson>;
   onMegaPfpChange: (
     personId: string,
     payload: { imageUrl: string; priority: 'hovered' | 'pinned' } | null,
@@ -23,19 +23,38 @@ type ConnectorLine = {
   tone: 'family' | 'romance' | 'legal' | 'custom';
 };
 
-function getSpecialLabel(generation: number) {
-  switch (generation) {
-    case 0:
-      return ' (Before Tsundere Bot aka Riko)';
-    case 1:
-      return ' (0-1000 subs)';
-    case 2:
-      return ' (1000-20000 subs)';
-    case 3:
-      return ' (20000-50000 subs)';
-    default:
-      return '';
+function getSpecialLabel(generation: number, generationOrder: GenOrder) {
+  if (generationOrder === 'default') {
+    switch (generation) {
+      case 0:
+        return ' (Before Tsundere Bot aka Riko)';
+      case 1:
+        return ' (0-1000 subs)';
+      case 2:
+        return ' (1000-20000 subs)';
+      case 3:
+        return ' (20000-50000 subs)';
+      default:
+        return '';
+    }
   }
+  if (generationOrder === 'relations') {
+    switch (generation) {
+      case -1:
+        return '';
+      case 0:
+        return ' (Rayen generation)';
+      case 1:
+        return ' (Riko generation)';
+      case 2:
+        return '';
+      case 3:
+        return ' (Slave generation)';
+      default:
+        return '';
+    }
+  }
+  return '';
 }
 
 function formatRelationTone(tone?: Relation['tone']): ConnectorLine['tone'] {
@@ -117,20 +136,38 @@ function getPopoverShift(node: HTMLElement, container: HTMLElement) {
   return clampedLeft - currentLeft;
 }
 
+
+function genPeople(people: JsonPerson[], generationOrder: GenOrder): Person[] {
+  let index = 0;
+  if (generationOrder === 'relations') {
+    index = 1;
+  }
+  const peopleWithGeneration = people.map((person) => ({
+    ...person,
+    generation: person.ordering[index][0],
+    order: person.ordering[index][1],
+  }));
+  return peopleWithGeneration;
+}
+
+
 export function TreeBoard({ people, relations, peopleById, onMegaPfpChange }: TreeBoardProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const cardRefs = useRef(new Map<string, HTMLElement>());
   const [connectorLines, setConnectorLines] = useState<ConnectorLine[]>([]);
   const [openPersonId, setOpenPersonId] = useState<string | null>(null);
   const [openRequestId, setOpenRequestId] = useState(0);
+  const [generationOrder, setGenerationOrder] = useState<GenOrder>('default');
+  const peoples = useMemo<Person[]>(() => genPeople(people, generationOrder), [people, generationOrder]);
+
   const generationById = useMemo(
-    () => new Map(people.map((person) => [person.id, person.generation])),
-    [people],
+    () => new Map(peoples.map((person) => [person.id, person.generation])),
+    [peoples],
   );
 
   const generations = useMemo(() => {
     const grouped = new Map<number, Person[]>();
-    for (const person of people) {
+    for (const person of peoples) {
       const bucket = grouped.get(person.generation) ?? [];
       bucket.push(person);
       grouped.set(person.generation, bucket);
@@ -142,7 +179,7 @@ export function TreeBoard({ people, relations, peopleById, onMegaPfpChange }: Tr
         generation,
         people: [...generationPeople].sort((left, right) => left.order - right.order),
       }));
-  }, [people]);
+  }, [peoples]);
 
   useLayoutEffect(() => {
     const updateLines = () => {
@@ -298,6 +335,27 @@ export function TreeBoard({ people, relations, peopleById, onMegaPfpChange }: Tr
 
   return (
     <section className="tree-board" ref={containerRef}>
+      <div className="tree-board-order-choice" role="group" aria-label="Generation ordering">
+        <p className="tree-board-order-label">Order generations by</p>
+        <div className="tree-board-order-toggle">
+          <button
+            type="button"
+            className={generationOrder === 'default' ? 'is-active' : undefined}
+            aria-pressed={generationOrder === 'default'}
+            onClick={() => setGenerationOrder('default')}
+          >
+            Default
+          </button>
+          <button
+            type="button"
+            className={generationOrder === 'relations' ? 'is-active' : undefined}
+            aria-pressed={generationOrder === 'relations'}
+            onClick={() => setGenerationOrder('relations')}
+          >
+            Relations
+          </button>
+        </div>
+      </div>
       <svg className="connector-layer" aria-hidden="true">
         <defs>
           <marker
@@ -325,7 +383,7 @@ export function TreeBoard({ people, relations, peopleById, onMegaPfpChange }: Tr
       <div className="generation-stack">
         {generations.map((group) => (
           <section key={group.generation} className="generation-row">
-            <div className="generation-label">Generation {group.generation}{getSpecialLabel(group.generation)}</div>
+            <div className="generation-label">Generation {group.generation}{getSpecialLabel(group.generation, generationOrder)}</div>
             <div className="generation-grid">
               {group.people.map((person) => (
                 <PersonCard

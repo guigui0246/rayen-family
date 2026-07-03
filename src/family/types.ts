@@ -1,12 +1,11 @@
-export type Person = {
+export type JsonPerson = {
   id: string;
   name: string;
   aliases?: string[];
   role?: string;
   avatarImage?: string;
   warnings?: string[];
-  generation: number;
-  order: number;
+  ordering: number[][];
   born?: string;
   died?: string;
   location?: string;
@@ -18,6 +17,11 @@ export type Person = {
     strike?: boolean;
     megaPfP?: boolean;
   };
+};
+
+export type Person = JsonPerson & {
+  generation: number;
+  order: number;
 };
 
 export type Relation = {
@@ -37,6 +41,8 @@ export type TreeSettings = {
     mail: string;
     github: string;
   };
-  people: Person[];
+  people: JsonPerson[];
   relations: Relation[];
 };
+
+export type GenOrder = 'default' | 'relations';

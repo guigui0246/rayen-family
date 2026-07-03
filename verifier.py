@@ -26,8 +26,7 @@ class Person(TypedDict):
     died: Optional[str]
     aliases: Optional[list[str]]
     avatarImage: Optional[str]
-    generation: int
-    order: int
+    ordering: list[list[int]]
     acknowledged: bool
     hasRole: bool
     bio: Optional[str]
@@ -70,7 +69,7 @@ def verify_family_tree(file_path: str):
 
     # Verify that each member has a unique ID
     member_ids: set[str] = set()
-    member_pos: set[tuple[int, int]] = set()
+    member_pos: dict[int, set[tuple[int, int]]] = {}
     for member in data['people']:
         if not isinstance(member, dict):
             print("Invalid member data: each member should be a dictionary.")
@@ -84,11 +83,8 @@ def verify_family_tree(file_path: str):
         if 'name' not in member:
             print(f"Invalid member data: missing 'name' key for member with ID {member['id']}.")
             return False
-        if 'generation' not in member:
-            print(f"Invalid member data: missing 'generation' key for member with ID {member['id']}.")
-            return False
-        if 'order' not in member:
-            print(f"Invalid member data: missing 'order' key for member with ID {member['id']}.")
+        if 'ordering' not in member:
+            print(f"Invalid member data: missing 'ordering' key for member with ID {member['id']}.")
             return False
         if 'acknowledged' not in member:
             print(f"Invalid member data: missing 'acknowledged' key for member with ID {member['id']}.")
@@ -96,12 +92,13 @@ def verify_family_tree(file_path: str):
         if 'hasRole' not in member:
             print(f"Invalid member data: missing 'hasRole' key for member with ID {member['id']}.")
             return False
-        if not isinstance(member['generation'], int) or member['generation'] < 0:
-            print(f"Invalid generation value for member with ID {member['id']}: {member['generation']}")
+        if not isinstance(member['ordering'], list):
+            print(f"Invalid ordering value for member with ID {member['id']}: {member['ordering']}")
             return False
-        if not isinstance(member['order'], int) or member['order'] < 0:
-            print(f"Invalid order value for member with ID {member['id']}: {member['order']}")
-            return False
+        for order in member['ordering']:
+            if not isinstance(order, list) or len(order) != 2 or not all(isinstance(x, int) for x in order):
+                print(f"Invalid ordering value for member with ID {member['id']}: {order}")
+                return False
         if 'warnings' in member:
             if not isinstance(member['warnings'], list):
                 print(f"Invalid warnings format for member with ID {member['id']}: should be a list.")
@@ -119,23 +116,28 @@ def verify_family_tree(file_path: str):
                 if not isinstance(value, bool):
                     print(f"Invalid modifier value for member with ID {member['id']}: {modifier} should be a boolean.")
                     return False
-        if (member['generation'], member['order']) in member_pos:
-            print(f"Duplicate position found: generation {member['generation']}, order {member['order']}")
-            return False
+        for i, ordering in enumerate(member['ordering']):
+            gen, ord = ordering
+            if i not in member_pos:
+                member_pos[i] = set()
+            if (gen, ord) in member_pos[i]:
+                print(f"Duplicate position found: generation {gen}, order {ord}")
+                return False
+            member_pos[i].add((gen, ord))
         member_ids.add(member['id'])
-        member_pos.add((member['generation'], member['order']))
 
-    poses: dict[int, set[int]] = {}
-    for pos in member_pos:
-        gen, ord = pos
-        if gen not in poses:
-            poses[gen] = set()
-        poses[gen].add(ord)
+    for i in range(len(member_pos)):
+        poses: dict[int, set[int]] = {}
+        for pos in member_pos[i]:
+            gen, ord = pos
+            if gen not in poses:
+                poses[gen] = set()
+            poses[gen].add(ord)
 
-    for gen, ords in poses.items():
-        if list(sorted(ords)) != list(range(len(ords))):
-            print(f"Generation {gen} has non-contiguous order values: {sorted(ords)}")
-            return False
+        for gen, ords in poses.items():
+            if list(sorted(ords)) != list(range(len(ords))):
+                print(f"Generation {gen} has non-contiguous order values: {sorted(ords)}")
+                return False
 
     # Verify that each relationship references valid member IDs
     for relationship in data['relations']:

@@ -1,4 +1,4 @@
-import type { Person, Relation } from './types';
+import type { JsonPerson, Relation } from './types';
 
 export type MatchMode = 'all' | 'any';
 export type PresenceMode = 'present' | 'absent';
@@ -47,7 +47,7 @@ function includesQuery(value: string | undefined, query: string) {
   return normalize(value ?? '').includes(normalizedQuery);
 }
 
-function getPersonSearchText(person: Person) {
+function getPersonSearchText(person: JsonPerson) {
   return [
     person.id,
     person.name,
@@ -117,7 +117,7 @@ export function createInitialFilterState(): FilterState {
   };
 }
 
-export function buildFilterOptions(people: Person[], relations: Relation[]): FilterOptions {
+export function buildFilterOptions(people: JsonPerson[], relations: Relation[]): FilterOptions {
   const socialNetworks = [...new Set(people.flatMap((person) => Object.keys(person.socialLinks ?? {})))].sort();
   const relationTones = [...new Set(relations.map((relation) => relation.tone).filter(Boolean))].sort() as Array<
     NonNullable<Relation['tone']>
@@ -134,7 +134,7 @@ export function buildFilterOptions(people: Person[], relations: Relation[]): Fil
   };
 }
 
-export function filterPeople(people: Person[], relations: Relation[], filters: FilterState) {
+export function filterPeople(people: JsonPerson[], relations: Relation[], filters: FilterState) {
   return people.filter((person) => {
     const checks: boolean[] = [];
     const normalizedKeyword = normalize(filters.keyword);
@@ -189,7 +189,7 @@ export function filterPeople(people: Person[], relations: Relation[], filters: F
   });
 }
 
-export function filterRelations(relations: Relation[], visiblePeople: Person[], filters: FilterState) {
+export function filterRelations(relations: Relation[], visiblePeople: JsonPerson[], filters: FilterState) {
   const visibleIds = new Set(visiblePeople.map((person) => person.id));
   const normalizedKeyword = normalize(filters.keyword);
   const activeToneFilters = Object.entries(filters.relationToneFilters).filter(([, enabled]) => enabled);
