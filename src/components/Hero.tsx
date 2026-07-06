@@ -26,6 +26,7 @@ export function Hero({
       <div className="hero-copy">
         <p className="terminal-line">rayen@family-tree ~</p>
         <h1>{title}</h1>
+        <h2>(No updates until the end of <a href="https://gdq.gg/">SGDQ</a>)</h2>
         <p className="intro">{subtitle}</p>
       </div>
 
