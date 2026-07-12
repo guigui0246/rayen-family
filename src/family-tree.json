@@ -25,6 +25,7 @@
         "tiktok": "https://www.tiktok.com/@justrayen7",
         "patreon": "https://www.patreon.com/c/RayenAI",
         "discord": "https://discord.com/users/1118769927009079341",
+        "discord2": "https://discord.com/users/234400476227960832",
         "website": "https://rayenfeng.github.io/",
         "instagram2": "https://www.instagram.com/rayenfeng/",
         "linkedin": "https://www.linkedin.com/in/rayen-feng/"
@@ -602,6 +603,12 @@
       "to": "rayen",
       "label": "siblings",
       "tone": "family"
+    },
+    {
+      "from": "bee",
+      "to": "riko",
+      "label": "couple",
+      "tone": "romance"
     }
   ]
 }
