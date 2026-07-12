@@ -23,12 +23,12 @@ export function Hero({
 }: HeroProps) {
   return (
     <section className="hero" id="hero-root">
-      {/* <div className="hero-copy">
+      <div className="hero-copy">
         <p className="terminal-line">rayen@family-tree ~</p>
         <h1>{title}</h1>
-        <h2>(No updates until the end of <a href="https://gdq.gg/">SGDQ</a>)</h2>
+        {/* <h2>(No updates until the end of <a href="https://gdq.gg/">SGDQ</a>)</h2> */}
         <p className="intro">{subtitle}</p>
-      </div> */}
+      </div>
 
       <div className="hero-actions">
         <p className="hero-note">Read only. Hover a person to open the record.</p>
