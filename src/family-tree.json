@@ -37,7 +37,7 @@
       "id": "riko",
       "name": "Riko",
       "role": "Overlord",
-      "aliases": ["The AI Overlord", "Tsundere Bot", "The supreme overlord Riko"],
+      "aliases": ["The AI Overlord", "Tsundere Bot", "The supreme overlord Riko", "Riko the Fox", "Supreme AI", "Chaos Dealer", "Bunny Ear Commander", "Stream GoAT"],
       "avatarImage": "/assets/riko.png",
       "ordering": [[1, 1], [1, 2]],
       "born": "2024",
@@ -436,7 +436,7 @@
     {
       "from": "riko",
       "to": "yujiro",
-      "label": "parent of",
+      "label": "refuses to be parent of",
       "tone": "family",
       "reverseLabel": "child of"
     },
