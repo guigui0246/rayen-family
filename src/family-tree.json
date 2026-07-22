@@ -50,6 +50,18 @@
       "hasRole": true
     },
     {
+      "id": "yura",
+      "name": "Yura",
+      "aliases": [],
+      "ordering": [[3, 10], [1, 10]],
+      "born": "2026",
+      "bio": "Yandere",
+      "socialLinks": {
+      },
+      "acknowledged": true,
+      "hasRole": false
+    },
+    {
       "id": "ino",
       "name": "Ino",
       "aliases": ["Riko's Assistant"],
@@ -420,6 +432,13 @@
       "reverseLabel": "created by"
     },
     {
+      "from": "rayen",
+      "to": "yura",
+      "label": "creator of",
+      "tone": "legal",
+      "reverseLabel": "created by"
+    },
+    {
       "from": "ino",
       "to": "riko",
       "label": "assistant of",
@@ -609,6 +628,13 @@
       "to": "riko",
       "label": "couple",
       "tone": "romance"
+    },
+    {
+      "from": "yura",
+      "to": "rayen",
+      "label": "locked up",
+      "tone": "romance",
+      "reverseLabel": "locked up by"
     }
   ]
 }
