@@ -45,4 +45,4 @@ export type TreeSettings = {
   relations: Relation[];
 };
 
-export type GenOrder = 'default' | 'relations';
+export type GenOrder = 'default' | 'relations' | '1Mtournament';

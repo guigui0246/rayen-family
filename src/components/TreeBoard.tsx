@@ -23,17 +23,23 @@ type ConnectorLine = {
   tone: 'family' | 'romance' | 'legal' | 'custom';
 };
 
+// A large number so it doesn't conflict with valid generations.
+export const INVALID_GENERATION = 1000;
+
 function getSpecialLabel(generation: number, generationOrder: GenOrder) {
+  if (generation == INVALID_GENERATION) {
+    return 'Unknown Generation';
+  }
   if (generationOrder === 'default') {
     switch (generation) {
       case 0:
-        return ' (Before Tsundere Bot aka Riko)';
+        return 'Generation 0 (Before Tsundere Bot aka Riko)';
       case 1:
-        return ' (0-1000 subs)';
+        return 'Generation 1 (0-1000 subs)';
       case 2:
-        return ' (1000-20000 subs)';
+        return 'Generation 2 (1000-20000 subs)';
       case 3:
-        return ' (20000-50000 subs)';
+        return 'Generation 3 (20000-50000 subs)';
       default:
         return '';
     }
@@ -41,15 +47,41 @@ function getSpecialLabel(generation: number, generationOrder: GenOrder) {
   if (generationOrder === 'relations') {
     switch (generation) {
       case -1:
-        return '';
+        return 'Generation -1';
       case 0:
-        return ' (Rayen generation)';
+        return 'Generation 0 (Rayen generation)';
       case 1:
-        return ' (Riko generation)';
+        return 'Generation 1 (Riko generation)';
       case 2:
-        return '';
+        return 'Generation 2';
       case 3:
-        return ' (Slave generation)';
+        return 'Generation 3 (Slave generation)';
+      default:
+        return '';
+    }
+  }
+  if (generationOrder === '1Mtournament') {
+    switch (generation) {
+      case -1:
+        return 'Still in the tournament';
+      case 0:
+        return 'In Losers\' bracket';
+      case 1:
+        return 'Winner';
+      case 2:
+        return '2nd place';
+      case 3:
+        return '3rd place';
+      case 4:
+        return 'Eliminated in finale (round 5 and losers round 6 & 7)';
+      case 5:
+        return 'Eliminated in semi-finals (round 4 and losers round 4 & 5)';
+      case 6:
+        return 'Eliminated in quarter-finals (round 3 and losers round 2 & 3)';
+      case 7:
+        return 'Eliminated at the start of knockout';
+      case 8:
+        return 'Eliminated in group stage';
       default:
         return '';
     }
@@ -142,10 +174,13 @@ function genPeople(people: JsonPerson[], generationOrder: GenOrder): Person[] {
   if (generationOrder === 'relations') {
     index = 1;
   }
+  if (generationOrder === '1Mtournament') {
+    index = 2;
+  }
   const peopleWithGeneration = people.map((person) => ({
     ...person,
-    generation: person.ordering[index][0],
-    order: person.ordering[index][1],
+    generation: person.ordering[index]?.[0] ?? INVALID_GENERATION,
+    order: person.ordering[index]?.[1] ?? INVALID_GENERATION,
   }));
   return peopleWithGeneration;
 }
@@ -354,6 +389,14 @@ export function TreeBoard({ people, relations, peopleById, onMegaPfpChange }: Tr
           >
             Relations
           </button>
+          <button
+            type="button"
+            className={generationOrder === '1Mtournament' ? 'is-active' : undefined}
+            aria-pressed={generationOrder === '1Mtournament'}
+            onClick={() => setGenerationOrder('1Mtournament')}
+          >
+            1 Month Tournament
+          </button>
         </div>
       </div>
       <svg className="connector-layer" aria-hidden="true">
@@ -383,7 +426,7 @@ export function TreeBoard({ people, relations, peopleById, onMegaPfpChange }: Tr
       <div className="generation-stack">
         {generations.map((group) => (
           <section key={group.generation} className="generation-row">
-            <div className="generation-label">Generation {group.generation}{getSpecialLabel(group.generation, generationOrder)}</div>
+            <div className="generation-label">{getSpecialLabel(group.generation, generationOrder)}</div>
             <div className="generation-grid">
               {group.people.map((person) => (
                 <PersonCard
