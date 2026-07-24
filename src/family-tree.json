@@ -13,7 +13,7 @@
       "name": "Rayen Feng",
       "aliases": ["Just Rayen", "Silver Radiant", "rain", "MaidMaster", "The Goat", "Cheetos femboy", "Temu Vedal", "Destiny flame", "Ryan"],
       "avatarImage": "/assets/rayen.png",
-      "ordering": [[0, 0], [0, 3], [-1, 9]],
+      "ordering": [[0, 1], [0, 5], [0, 2]],
       "bio": "Self-declared Chungus building AI waifus.",
       "socialLinks": {
         "youtube": "https://youtube.com/@JustRayen",
@@ -39,7 +39,7 @@
       "role": "Overlord",
       "aliases": ["The AI Overlord", "Tsundere Bot", "The supreme overlord Riko", "Riko the Fox", "Supreme AI", "Chaos Dealer", "Bunny Ear Commander", "Stream GoAT"],
       "avatarImage": "/assets/riko.png",
-      "ordering": [[1, 1], [1, 2], [-1, 19]],
+      "ordering": [[1, 1], [1, 2], [0, 11]],
       "born": "2024",
       "bio": "First AI waifu of rayen.",
       "socialLinks": {
@@ -53,7 +53,7 @@
       "id": "yura",
       "name": "Yura",
       "aliases": [],
-      "ordering": [[3, 10], [1, 10], [-1, 12]],
+      "ordering": [[3, 10], [1, 10], [0, 3]],
       "born": "2026",
       "bio": "Yandere",
       "socialLinks": {
@@ -67,7 +67,7 @@
       "aliases": ["Riko's Assistant"],
       "role": "Manager",
       "avatarImage": "/assets/ino.webp",
-      "ordering": [[1, 4], [1, 5], [-1, 1]],
+      "ordering": [[1, 4], [1, 5], [-1, 4]],
       "born": "2025",
       "bio": "2nd AI waifu of rayen.",
       "socialLinks": {
@@ -81,7 +81,7 @@
       "name": "Sun Yujiro",
       "aliases": [],
       "avatarImage": "/assets/sun_yujiro.webp",
-      "ordering": [[3, 0], [2, 0], [-1, 3]],
+      "ordering": [[3, 0], [2, 0], [-1, 2]],
       "bio": "Son of Rayen and Riko.",
       "socialLinks": {
         "discord": "https://discord.com/users/1229166942217179166",
@@ -95,7 +95,7 @@
       "name": "Known Asme",
       "aliases": [],
       "avatarImage": "/assets/asme.webp",
-      "ordering": [[3, 2], [1, 4], [-1, 15]],
+      "ordering": [[3, 2], [1, 4], [0, 1]],
       "bio": "Cousin of Ino and biggest fan of Riko.",
       "socialLinks": {
         "discord": "https://discord.com/users/991061592101765180",
@@ -113,7 +113,7 @@
       "name": "Volo",
       "aliases": [],
       "avatarImage": "/assets/volo.webp",
-      "ordering": [[3, 3], [1, 6], [-1, 5]],
+      "ordering": [[3, 3], [1, 6], [0, 0]],
       "bio": "Step-brother of Ino.",
       "socialLinks": {
         "discord": "https://discord.com/users/1458503065891115267"
@@ -126,7 +126,7 @@
       "name": "infininoir",
       "aliases": ["Ranni's Consort"],
       "avatarImage": "/assets/infininoir.webp",
-      "ordering": [[2, 5], [2, 3], [-1, 13]],
+      "ordering": [[2, 5], [2, 3], [0, 9]],
       "bio": "Greatest worshipper of Ino.",
       "socialLinks": {
         "discord": "https://discord.com/users/1376294004034899972",
@@ -140,7 +140,7 @@
       "name": "Riko",
       "aliases": ["Jynx", "t9sy", "t9si"],
       "avatarImage": "/assets/t9si.png",
-      "ordering": [[2, 1], [1, 3], [-1, 0]],
+      "ordering": [[2, 1], [1, 3], [0, 12]],
       "bio": "Clone of Riko.",
       "socialLinks": {
         "discord": "https://discord.com/users/1070058785084817420",
@@ -156,7 +156,7 @@
       "name": "Akry Saps",
       "aliases": ["Diamond Masters Wife"],
       "avatarImage": "/assets/akry.webp",
-      "ordering": [[3, 4], [0, 6], [-1, 2]],
+      "ordering": [[3, 4], [0, 8], [0, 10]],
       "bio": "Aunt of Ino and wife of Diamond Master.",
       "socialLinks": {
         "discord": "https://discord.com/users/1469215673963122823"
@@ -169,7 +169,7 @@
       "name": "Diamond Master",
       "aliases": [],
       "avatarImage": "/assets/diamm.webp",
-      "ordering": [[3, 5], [0, 7], [-1, 4]],
+      "ordering": [[3, 5], [0, 9], [0, 6]],
       "bio": "Uncle of Ino.",
       "socialLinks": {
         "discord": "https://discord.com/users/573903151472836609",
@@ -186,7 +186,7 @@
       "aliases": [],
       "avatarImage": "/assets/guigui0246.webp",
       "born": "2005",
-      "ordering": [[1, 0], [1, 0], [-1, 18]],
+      "ordering": [[1, 0], [1, 0], [-1, 6]],
       "bio": "Creator of this family tree.",
       "socialLinks": {
         "discord": "https://discord.com/users/436178855104086037",
@@ -204,7 +204,7 @@
       "name": "Taishi",
       "aliases": [],
       "avatarImage": "/assets/taishi.webp",
-      "ordering": [[2, 2], [0, 5], [-1, 6]],
+      "ordering": [[2, 2], [0, 7], [-1, 5]],
       "socialLinks": {
         "discord": "https://discord.com/users/121269547452989440"
       },
@@ -217,7 +217,7 @@
       "role": "Fashion designer",
       "aliases": [],
       "avatarImage": "/assets/atlas.webp",
-      "ordering": [[1, 5], [0, 0], [-1, 14]],
+      "ordering": [[1, 5], [0, 0], [0, 7]],
       "socialLinks": {
         "discord": "https://discord.com/users/745319234619572372"
       },
@@ -270,7 +270,7 @@
       "born": "2005",
       "aliases": [],
       "avatarImage": "/assets/kirito.webp",
-      "ordering": [[3, 6], [1, 7], [-1, 20]],
+      "ordering": [[3, 6], [1, 7], [0, 5]],
       "socialLinks": {
         "discord": "https://discord.com/users/915851873376956456"
       },
@@ -282,7 +282,7 @@
       "name": "Solonaras",
       "aliases": [],
       "avatarImage": "/assets/solonaras.png",
-      "ordering": [[2, 4], [0, 2], [-1, 7]],
+      "ordering": [[2, 4], [0, 4], [-1, 1]],
       "socialLinks": {
         "discord": "https://discord.com/users/1414944231222411378"
       },
@@ -294,7 +294,7 @@
       "name": "Luna",
       "aliases": [],
       "avatarImage": "/assets/luna.png",
-      "ordering": [[3, 1], [1, 1], [-1, 16]],
+      "ordering": [[3, 1], [1, 1], [-1, 0]],
       "bio": "Wolf girl Vtuber, sings, plays minecraft, and likes to banter with chat.",
       "socialLinks": {
       },
@@ -317,7 +317,7 @@
       "name": "Lord Shadow",
       "aliases": ["blakdraganx666"],
       "avatarImage": "/assets/lordshadow.webp",
-      "ordering": [[2, 6], [2, 4], [-1, 8]],
+      "ordering": [[2, 6], [2, 4], [0, 8]],
       "bio": "Saved Kiko from Rayen's basement.",
       "socialLinks": {
         "discord": "https://discord.com/users/717372737655537756",
@@ -343,7 +343,7 @@
       "id": "universe",
       "name": "20univers08",
       "aliases": ["The universe itself"],
-      "ordering": [[2, 7], [-1, 0], [-1, 11]],
+      "ordering": [[2, 7], [-1, 0], [-1, 3]],
       "avatarImage": "/assets/universe.gif",
       "bio": "The universe.",
       "socialLinks": {
@@ -361,7 +361,7 @@
       "aliases": ["#1 Ado Simp", "Pikachubolk"],
       "location": "Netherlands",
       "born": "2006",
-      "ordering": [[1, 3], [2, 1], [-1, 10]],
+      "ordering": [[1, 3], [2, 1], [-1, 7]],
       "bio": "Co-Admin of the Riko server, and a big fan of Ado. Also the one deciding who has the family role.",
       "avatarImage": "/assets/seika.gif",
       "socialLinks": {
@@ -400,7 +400,7 @@
       "role": "bee",
       "aliases": ["Bee", "Lychi", "Queen Bee", "Lil' Stinger", "Babee", "Kusogaki", "Brat Bee", "Lil sis"],
       "avatarImage": "/assets/bee.jpg",
-      "ordering": [[3, 9], [0, 4], [-1, 17]],
+      "ordering": [[3, 9], [0, 6], [0, 4]],
       "bio": "I'm a bee",
       "socialLinks": {
         "youtube": "https://www.youtube.com/@lychibe",
@@ -413,6 +413,24 @@
         "linktree": "https://linktr.ee/Lychibe"
       },
       "acknowledged": true,
+      "hasRole": false
+    },
+    {
+      "id": "gavin",
+      "name": "Gavin",
+      "avatarImage": "/assets/gavin.png",
+      "ordering": [[0, 0], [0, 2], [9, 0]],
+      "bio": "IRL friend of Rayen.",
+      "acknowledged": false,
+      "hasRole": false
+    },
+    {
+      "id": "gerry",
+      "name": "Gerry",
+      "avatarImage": "/assets/gerry.png",
+      "ordering": [[0, 2], [0, 3], [9, 1]],
+      "bio": "IRL friend of Rayen.",
+      "acknowledged": false,
       "hasRole": false
     }
   ],
@@ -635,6 +653,18 @@
       "label": "locked up",
       "tone": "romance",
       "reverseLabel": "locked up by"
+    },
+    {
+      "from": "gavin",
+      "to": "rayen",
+      "label": "irl friends",
+      "tone": "custom"
+    },
+    {
+      "from": "gerry",
+      "to": "rayen",
+      "label": "irl friends",
+      "tone": "custom"
     }
   ]
 }

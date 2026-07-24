@@ -83,7 +83,7 @@ function getSpecialLabel(generation: number, generationOrder: GenOrder) {
       case 8:
         return 'Eliminated in group stage';
       default:
-        return '';
+        return 'Not in the tournament';
     }
   }
   return '';
