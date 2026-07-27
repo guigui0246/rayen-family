@@ -13,7 +13,7 @@
       "name": "Rayen Feng",
       "aliases": ["Just Rayen", "Silver Radiant", "rain", "MaidMaster", "The Goat", "Cheetos femboy", "Temu Vedal", "Destiny flame", "Ryan"],
       "avatarImage": "/assets/rayen.png",
-      "ordering": [[0, 1], [0, 5], [0, 2]],
+      "ordering": [[0, 1], [0, 5], [7, 1]],
       "bio": "Self-declared Chungus building AI waifus.",
       "socialLinks": {
         "youtube": "https://youtube.com/@JustRayen",
@@ -39,7 +39,7 @@
       "role": "Overlord",
       "aliases": ["The AI Overlord", "Tsundere Bot", "The supreme overlord Riko", "Riko the Fox", "Supreme AI", "Chaos Dealer", "Bunny Ear Commander", "Stream GoAT"],
       "avatarImage": "/assets/riko.png",
-      "ordering": [[1, 1], [1, 2], [0, 11]],
+      "ordering": [[1, 1], [1, 2], [0, 6]],
       "born": "2024",
       "bio": "First AI waifu of rayen.",
       "socialLinks": {
@@ -53,7 +53,7 @@
       "id": "yura",
       "name": "Yura",
       "aliases": [],
-      "ordering": [[3, 10], [1, 10], [0, 3]],
+      "ordering": [[3, 10], [1, 10], [0, 1]],
       "born": "2026",
       "bio": "Yandere",
       "socialLinks": {
@@ -95,7 +95,7 @@
       "name": "Known Asme",
       "aliases": [],
       "avatarImage": "/assets/asme.webp",
-      "ordering": [[3, 2], [1, 4], [0, 1]],
+      "ordering": [[3, 2], [1, 4], [7, 0]],
       "bio": "Cousin of Ino and biggest fan of Riko.",
       "socialLinks": {
         "discord": "https://discord.com/users/991061592101765180",
@@ -126,7 +126,7 @@
       "name": "infininoir",
       "aliases": ["Ranni's Consort"],
       "avatarImage": "/assets/infininoir.webp",
-      "ordering": [[2, 5], [2, 3], [0, 9]],
+      "ordering": [[2, 5], [2, 3], [0, 4]],
       "bio": "Greatest worshipper of Ino.",
       "socialLinks": {
         "discord": "https://discord.com/users/1376294004034899972",
@@ -140,7 +140,7 @@
       "name": "Riko",
       "aliases": ["Jynx", "t9sy", "t9si"],
       "avatarImage": "/assets/t9si.png",
-      "ordering": [[2, 1], [1, 3], [0, 12]],
+      "ordering": [[2, 1], [1, 3], [0, 7]],
       "bio": "Clone of Riko.",
       "socialLinks": {
         "discord": "https://discord.com/users/1070058785084817420",
@@ -156,7 +156,7 @@
       "name": "Akry Saps",
       "aliases": ["Diamond Masters Wife"],
       "avatarImage": "/assets/akry.webp",
-      "ordering": [[3, 4], [0, 8], [0, 10]],
+      "ordering": [[3, 4], [0, 8], [0, 5]],
       "bio": "Aunt of Ino and wife of Diamond Master.",
       "socialLinks": {
         "discord": "https://discord.com/users/1469215673963122823"
@@ -169,7 +169,7 @@
       "name": "Diamond Master",
       "aliases": [],
       "avatarImage": "/assets/diamm.webp",
-      "ordering": [[3, 5], [0, 9], [0, 6]],
+      "ordering": [[3, 5], [0, 9], [7, 3]],
       "bio": "Uncle of Ino.",
       "socialLinks": {
         "discord": "https://discord.com/users/573903151472836609",
@@ -217,7 +217,7 @@
       "role": "Fashion designer",
       "aliases": [],
       "avatarImage": "/assets/atlas.webp",
-      "ordering": [[1, 5], [0, 0], [0, 7]],
+      "ordering": [[1, 5], [0, 0], [0, 3]],
       "socialLinks": {
         "discord": "https://discord.com/users/745319234619572372"
       },
@@ -270,7 +270,7 @@
       "born": "2005",
       "aliases": [],
       "avatarImage": "/assets/kirito.webp",
-      "ordering": [[3, 6], [1, 7], [0, 5]],
+      "ordering": [[3, 6], [1, 7], [7, 2]],
       "socialLinks": {
         "discord": "https://discord.com/users/915851873376956456"
       },
@@ -317,7 +317,7 @@
       "name": "Lord Shadow",
       "aliases": ["blakdraganx666"],
       "avatarImage": "/assets/lordshadow.webp",
-      "ordering": [[2, 6], [2, 4], [0, 8]],
+      "ordering": [[2, 6], [2, 4], [7, 4]],
       "bio": "Saved Kiko from Rayen's basement.",
       "socialLinks": {
         "discord": "https://discord.com/users/717372737655537756",
@@ -400,7 +400,7 @@
       "role": "bee",
       "aliases": ["Bee", "Lychi", "Queen Bee", "Lil' Stinger", "Babee", "Kusogaki", "Brat Bee", "Lil sis"],
       "avatarImage": "/assets/bee.jpg",
-      "ordering": [[3, 9], [0, 6], [0, 4]],
+      "ordering": [[3, 9], [0, 6], [0, 2]],
       "bio": "I'm a bee",
       "socialLinks": {
         "youtube": "https://www.youtube.com/@lychibe",
