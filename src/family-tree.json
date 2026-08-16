@@ -39,7 +39,7 @@
       "role": "Overlord",
       "aliases": ["The AI Overlord", "Tsundere Bot", "The supreme overlord Riko", "Riko the Fox", "Supreme AI", "Chaos Dealer", "Bunny Ear Commander", "Stream GoAT"],
       "avatarImage": "/assets/riko.png",
-      "ordering": [[1, 1], [1, 2], [0, 2]],
+      "ordering": [[1, 1], [1, 2], [5, 1]],
       "born": "2024",
       "bio": "First AI waifu of rayen.",
       "socialLinks": {
@@ -67,7 +67,7 @@
       "aliases": ["Riko's Assistant"],
       "role": "Manager",
       "avatarImage": "/assets/ino.webp",
-      "ordering": [[1, 4], [1, 5], [-1, 2]],
+      "ordering": [[1, 4], [1, 5], [2, 0]],
       "born": "2025",
       "bio": "2nd AI waifu of rayen.",
       "socialLinks": {
@@ -81,7 +81,7 @@
       "name": "Sun Yujiro",
       "aliases": [],
       "avatarImage": "/assets/sun_yujiro.webp",
-      "ordering": [[3, 0], [2, 0], [0, 3]],
+      "ordering": [[3, 0], [2, 0], [5, 3]],
       "bio": "Son of Rayen and Riko.",
       "socialLinks": {
         "discord": "https://discord.com/users/1229166942217179166",
@@ -186,7 +186,7 @@
       "aliases": [],
       "avatarImage": "/assets/guigui0246.webp",
       "born": "2005",
-      "ordering": [[1, 0], [1, 0], [0, 1]],
+      "ordering": [[1, 0], [1, 0], [4, 0]],
       "bio": "Creator of this family tree.",
       "socialLinks": {
         "discord": "https://discord.com/users/436178855104086037",
@@ -204,7 +204,7 @@
       "name": "Taishi",
       "aliases": [],
       "avatarImage": "/assets/taishi.webp",
-      "ordering": [[2, 2], [0, 7], [0, 0]],
+      "ordering": [[2, 2], [0, 7], [5, 2]],
       "socialLinks": {
         "discord": "https://discord.com/users/121269547452989440"
       },
@@ -294,7 +294,7 @@
       "name": "Luna",
       "aliases": [],
       "avatarImage": "/assets/luna.png",
-      "ordering": [[3, 1], [1, 1], [-1, 0]],
+      "ordering": [[3, 1], [1, 1], [5, 0]],
       "bio": "Wolf girl Vtuber, sings, plays minecraft, and likes to banter with chat.",
       "socialLinks": {
       },
@@ -343,7 +343,7 @@
       "id": "universe",
       "name": "20univers08",
       "aliases": ["The universe itself"],
-      "ordering": [[2, 7], [-1, 0], [-1, 1]],
+      "ordering": [[2, 7], [-1, 0], [1, 0]],
       "avatarImage": "/assets/universe.gif",
       "bio": "The universe.",
       "socialLinks": {
@@ -361,7 +361,7 @@
       "aliases": ["#1 Ado Simp", "Pikachubolk"],
       "location": "Netherlands",
       "born": "2006",
-      "ordering": [[1, 3], [2, 1], [-1, 3]],
+      "ordering": [[1, 3], [2, 1], [3, 0]],
       "bio": "Co-Admin of the Riko server, and a big fan of Ado. Also the one deciding who has the family role.",
       "avatarImage": "/assets/seika.gif",
       "socialLinks": {
