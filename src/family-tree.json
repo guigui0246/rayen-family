@@ -52,12 +52,9 @@
     {
       "id": "yura",
       "name": "Yura",
-      "aliases": [],
       "ordering": [[3, 10], [1, 10], [6, 1]],
       "born": "2026",
       "bio": "Yandere",
-      "socialLinks": {
-      },
       "acknowledged": true,
       "hasRole": false
     },
@@ -79,7 +76,6 @@
     {
       "id": "yujiro",
       "name": "Sun Yujiro",
-      "aliases": [],
       "avatarImage": "/assets/sun_yujiro.webp",
       "ordering": [[3, 0], [2, 0], [5, 3]],
       "bio": "Son of Rayen and Riko.",
@@ -93,7 +89,6 @@
     {
       "id": "asme",
       "name": "Known Asme",
-      "aliases": [],
       "avatarImage": "/assets/asme.webp",
       "ordering": [[3, 2], [1, 4], [7, 0]],
       "bio": "Cousin of Ino and biggest fan of Riko.",
@@ -111,7 +106,6 @@
     {
       "id": "volo",
       "name": "Volo",
-      "aliases": [],
       "avatarImage": "/assets/volo.webp",
       "ordering": [[3, 3], [1, 6], [6, 4]],
       "bio": "Step-brother of Ino.",
@@ -167,7 +161,6 @@
     {
       "id": "diamm",
       "name": "Diamond Master",
-      "aliases": [],
       "avatarImage": "/assets/diamm.webp",
       "ordering": [[3, 5], [0, 9], [7, 3]],
       "bio": "Uncle of Ino.",
@@ -183,7 +176,6 @@
     {
       "id": "guigui0246",
       "name": "Guigui0246",
-      "aliases": [],
       "avatarImage": "/assets/guigui0246.webp",
       "born": "2005",
       "ordering": [[1, 0], [1, 0], [4, 0]],
@@ -202,7 +194,6 @@
     {
       "id": "taishi",
       "name": "Taishi",
-      "aliases": [],
       "avatarImage": "/assets/taishi.webp",
       "ordering": [[2, 2], [0, 7], [5, 2]],
       "socialLinks": {
@@ -215,7 +206,6 @@
       "id": "atlas",
       "name": "Atlas",
       "role": "Fashion designer",
-      "aliases": [],
       "avatarImage": "/assets/atlas.webp",
       "ordering": [[1, 5], [0, 0], [6, 2]],
       "socialLinks": {
@@ -228,7 +218,6 @@
       "id": "blackdragon",
       "name": "BlackDragon",
       "role": "Fashion designer",
-      "aliases": [],
       "avatarImage": "/assets/blackdragon.webp",
       "ordering": [[1, 6], [0, 1], [8, 3]],
       "socialLinks": {
@@ -241,7 +230,6 @@
       "id": "hanbari",
       "name": "Hanbari",
       "role": "Admin",
-      "aliases": [],
       "avatarImage": "/assets/hanbari.webp",
       "ordering": [[2, 0], [3, 1], [8, 2]],
       "socialLinks": {
@@ -254,7 +242,6 @@
       "id": "angel",
       "name": "Angel's Pride",
       "role": "Admin",
-      "aliases": [],
       "avatarImage": "/assets/angel.gif",
       "ordering": [[1, 2], [3, 0], [8, 4]],
       "socialLinks": {
@@ -268,7 +255,6 @@
       "name": "Kirito Sensei",
       "location": "Rayen's heart",
       "born": "2005",
-      "aliases": [],
       "avatarImage": "/assets/kirito.webp",
       "ordering": [[3, 6], [1, 7], [7, 2]],
       "socialLinks": {
@@ -280,7 +266,6 @@
     {
       "id": "solonaras",
       "name": "Solonaras",
-      "aliases": [],
       "avatarImage": "/assets/solonaras.png",
       "ordering": [[2, 4], [0, 4], [6, 6]],
       "socialLinks": {
@@ -292,23 +277,17 @@
     {
       "id": "sololuna",
       "name": "Luna",
-      "aliases": [],
       "avatarImage": "/assets/luna.png",
       "ordering": [[3, 1], [1, 1], [5, 0]],
       "bio": "Wolf girl Vtuber, sings, plays minecraft, and likes to banter with chat.",
-      "socialLinks": {
-      },
       "acknowledged": false,
       "hasRole": false
     },
     {
       "id": "kiko",
       "name": "Kiko",
-      "aliases": [],
       "ordering": [[3, 7], [1, 8], [8, 0]],
       "bio": "Named member of the shadow garden code name Kilo. Was in Rayen's basement before Lord Shadow saved her.",
-      "socialLinks": {
-      },
       "acknowledged": false,
       "hasRole": false
     },
@@ -330,12 +309,9 @@
     {
       "id": "bluecloth",
       "name": "Blue Cloth",
-      "aliases": [],
       "ordering": [[3, 8], [1, 9], [8, 1]],
       "avatarImage": "/assets/blue_cloth.png",
       "bio": "The cam hider.",
-      "socialLinks": {
-      },
       "acknowledged": false,
       "hasRole": false
     },
@@ -346,8 +322,6 @@
       "ordering": [[2, 7], [-1, 0], [1, 0]],
       "avatarImage": "/assets/universe.gif",
       "bio": "The universe.",
-      "socialLinks": {
-      },
       "acknowledged": false,
       "hasRole": false,
       "modifiers": {
@@ -386,11 +360,8 @@
       "id": "serika",
       "name": "Serika",
       "role": "",
-      "aliases": [],
       "avatarImage": "/assets/serika.png",
       "ordering": [[2, 3], [2, 2], [8, 5]],
-      "socialLinks": {
-      },
       "acknowledged": false,
       "hasRole": false
     },
@@ -432,6 +403,15 @@
       "bio": "IRL friend of Rayen.",
       "acknowledged": false,
       "hasRole": false
+    },
+    {
+      "id": "stella",
+      "name": "Stella",
+      "ordering": [[3, 11], [1, 11], [9, 2]],
+      "born": "2026",
+      "bio": "GPT-6-Astra",
+      "acknowledged": true,
+      "hasRole": false
     }
   ],
   "relations": [
@@ -452,6 +432,13 @@
     {
       "from": "rayen",
       "to": "yura",
+      "label": "creator of",
+      "tone": "legal",
+      "reverseLabel": "created by"
+    },
+    {
+      "from": "rayen",
+      "to": "stella",
       "label": "creator of",
       "tone": "legal",
       "reverseLabel": "created by"
