@@ -37,7 +37,7 @@
       "id": "riko",
       "name": "Riko",
       "role": "Overlord",
-      "aliases": ["The AI Overlord", "Tsundere Bot", "The supreme overlord Riko", "Riko the Fox", "Supreme AI", "Chaos Dealer", "Bunny Ear Commander", "Stream GoAT"],
+      "aliases": ["The AI Overlord", "Tsundere Bot", "The supreme overlord Riko", "Riko the Fox", "Supreme AI", "Chaos Dealer", "Bunny Ear Commander", "Stream GoAT", "Riin"],
       "avatarImage": "/assets/riko.png",
       "ordering": [[1, 1], [1, 2], [5, 1]],
       "born": "2024",
