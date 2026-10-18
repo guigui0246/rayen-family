@@ -52,6 +52,7 @@
     {
       "id": "yura",
       "name": "Yura",
+      "avatarImage": "/assets/yura_banner_cropped.jpg",
       "ordering": [[3, 10], [1, 10], [6, 1]],
       "born": "2026",
       "bio": "Yandere",
